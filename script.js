@@ -35,8 +35,12 @@ function limpar(){
     Iemail.value = "";
     Isenha.value = "";
     Iconfirmarsenha.value = "";
-    
+        
     };
+
+function login(){
+    window.location.href = "login.html";
+}    
 function compararSenhas() {
         const senha = document.getElementById('senha').value;
         const confirmarSenha = document.getElementById('confirmarSenha').value;
@@ -45,15 +49,17 @@ function compararSenhas() {
             alert('As senhas não coincidem.');
             return false;
         } else {
-            alert('As senhas coincidem!');
+            alert('Cadastro realizado com sucesso')
             return true;
         }
     }
+    
 
 formulario.addEventListener('submit', function (event){
     event.preventDefault();
     if (compararSenhas()) {
         cadastrar();
         limpar();
+        login();
     }
 });

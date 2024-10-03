@@ -1,0 +1,65 @@
+body {
+    background-color: #333;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #343a40;
+}
+
+.header .logo {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.header span {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+.input-section {
+    margin-top: auto;
+    padding: 20px;
+}
+
+.input-group {
+    background-color: #444;
+    border-radius: 30px;
+}
+
+.input-group input {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    outline: none;
+}
+
+.input-group-text {
+    background-color: transparent;
+    border: none;
+}
+
+  .container {
+    min-height: calc(100vh - 60px); /* Ajustar 60px de acordo com a altura do footer */
+  }

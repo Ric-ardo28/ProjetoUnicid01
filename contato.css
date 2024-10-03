@@ -1,0 +1,47 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #b4a1ec;
+}
+
+.card {
+    background-color: #d3d3d3;
+    border-radius: 20px;
+    width: 400px;
+    height: 450px;
+    max-width: 400px;
+    /* Largura máxima do card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-icons img {
+    width: 50px;
+    margin: 10px;
+}
+
+.logo {
+    width: 50px;
+}
+
+.navbar {
+    padding: 1rem;
+}
+
+.nav-link {
+    color: #000;
+    font-weight: bold;
+}
+
+
+
+.btn-custom {
+    
+    background-color: #7b57f2;
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda */
+    border-radius: 20px; /* Ajuste o valor conforme desejado */
+    padding: 8px 16px; /* Para melhor espaçamento */
+    text-decoration: none; /* Remove o sublinhado */
+
+}

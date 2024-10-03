@@ -1,0 +1,39 @@
+.bg-custom {
+    background-color: #b4a1ec;
+    /* Cor de fundo personalizada */
+}
+
+html,
+body {
+    height: 100%;
+    /* Define a altura de toda a página como 100% da janela do navegador */
+   
+}
+
+.logo {
+    width: 40px;
+    height: auto;
+    /* Mantém a proporção da imagem */
+}
+
+.students {
+    width: 1200px;
+    height: 500px;
+}
+
+.custom-btn {
+    background-color: #7b57f2;
+    color: rgb(254, 252, 252); /* Cor do texto */
+    border: none; /* Remove a borda */
+    border-radius: 20px; /* Ajuste o valor conforme desejado */
+    padding: 8px 20px; /* Para melhor espaçamento */
+    text-decoration: none;
+}
+
+.custom-btn:hover {
+    background-color: #6a4fcf; /* Cor ao passar o mouse (opcional) */
+}
+
+
+
+

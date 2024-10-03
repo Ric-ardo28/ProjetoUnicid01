@@ -50,7 +50,6 @@ function compararSenhas() {
         }
     }
 
-
 formulario.addEventListener('submit', function (event){
     event.preventDefault();
     if (compararSenhas()) {

@@ -6,6 +6,8 @@ const Iemail = document.getElementById("email");
 const Isenha = document.getElementById("senha");
 const Iconfirmarsenha = document.getElementById("confirmarSenha");
 
+
+
 function cadastrar(){
     fetch("http://localhost:8080/usuario",
         {
@@ -38,7 +40,7 @@ function limpar(){
         
     };
 
-function login(){
+function loginCadastro(){
     window.location.href = "login.html";
 }    
 function compararSenhas() {
@@ -60,6 +62,6 @@ formulario.addEventListener('submit', function (event){
     if (compararSenhas()) {
         cadastrar();
         limpar();
-        login();
+        loginCadastro();
     }
 });

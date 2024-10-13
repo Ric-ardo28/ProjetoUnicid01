@@ -1,0 +1,80 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+    background-color: #bca9f2; /* Fundo claro para destaque */
+    position: relative; /* Necessário para posicionamento */
+    min-height: 80vh; /* Altura mínima */
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    grid-gap: 10px;
+    border: 2px solid #dcae1d; /* Corrigido */
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #ffffff; /* Cor do quadro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para efeito de profundidade */
+}
+.letter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border: 1px solid #dcae1d; /* Corrigido */
+    border-radius: 5px;
+    background-color: #f0f0f0; /* Fundo leve para cada letra */
+}
+input {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid #007bff; /* Borda mais visível */
+    border-radius: 5px;
+    outline: none;
+    background-color: #e6f7ff; /* Fundo mais claro para destacar */
+    transition: border-color 0.3s;
+}
+input:focus {
+    border-color: #0056b3; /* Borda ao focar */
+}
+button {
+    padding: 15px 30px; /* Tamanho do botão */
+    font-size: 18px; /* Tamanho da fonte */
+    background-color: #7b57f2; /* Cor de fundo */
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Efeito de transição */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+    margin-top: 20px; /* Espaçamento acima do botão */
+}
+button:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Aumenta ligeiramente ao passar o mouse */
+}
+.feedback {
+    margin-top: 20px; /* Espaçamento acima do feedback */
+    font-size: 20px; /* Tamanho da fonte para feedback */
+    font-weight: bold; /* Negrito para destacar */
+    display: none; /* Inicialmente oculto */
+}
+.button-row {
+    width: 100%; /* Largura total para alinhamento */
+    display: flex;
+    justify-content: space-between; /* Distribui os botões para os lados opostos */
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    padding: 0 20px; /* Margens laterais para espaçamento */
+}

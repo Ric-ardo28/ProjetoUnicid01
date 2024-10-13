@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício do Alfabeto</title>
+    <link rel="stylesheet" href="exercicio.css">
+  
+</head>
+<body>
+
+    <div class="container">
+        <h1>Preencha as letras do alfabeto!</h1>
+        <div class="grid">
+            <div class="letter-container"><input type="text" maxlength="1" aria-label="Letra A"></div>   <!-- A -->
+            <div class="letter-container">B</div>                       <!-- B -->
+            <div class="letter-container"><input type="text" maxlength="1" aria-label="Letra C"></div>   <!-- C -->
+            <div class="letter-container">D</div>                       <!-- D -->
+            <div class="letter-container">E</div>                       <!-- E -->
+            
+            <div class="letter-container">F</div>                       <!-- F -->
+            <div class="letter-container"><input type="text" maxlength="1" aria-label="Letra G"></div>   <!-- G -->
+            <div class="letter-container">H</div>                       <!-- H -->
+            <div class="letter-container"><input type="text" maxlength="1" aria-label="Letra I"></div>   <!-- I -->
+            <div class="letter-container">J</div>                       <!-- J -->
+            
+            <div class="letter-container"><input type="text" maxlength="1" aria-label="Letra K"></div>   <!-- K -->
+            <div class="letter-container">L</div>                       <!-- L -->
+            <div class="letter-container"><input type="text" maxlength="1" aria-label="Letra M"></div>   <!-- M -->
+            <div class="letter-container">N</div>                       <!-- N -->
+            <div class="letter-container"><input type="text" maxlength="1" aria-label="Letra O"></div>   <!-- O -->
+            
+            <div class="letter-container">P</div>                       <!-- P -->
+            <div class="letter-container">Q</div>                       <!-- Q -->
+            <div class="letter-container"><input type="text" maxlength="1" aria-label="Letra R"></div>   <!-- R -->
+            <div class="letter-container">S</div>                       <!-- S -->
+            <div class="letter-container">T</div>                       <!-- T -->
+            
+            <div class="letter-container">U</div>                       <!-- U -->
+            <div class="letter-container">V</div>                       <!-- V -->
+            <div class="letter-container"><input type="text" maxlength="1" aria-label="Letra W"></div>   <!-- W -->
+            <div class="letter-container">X</div>                       <!-- X -->
+            <div class="letter-container">Y</div>                       <!-- Y -->
+            
+            <div class="letter-container"><input type="text" maxlength="1" aria-label="Letra Z"></div>   <!-- Z -->
+        </div>
+
+        <!-- Área de feedback -->
+        <div class="feedback" id="feedbackMessage"></div>
+
+        <!-- Botão de Verificar Respostas -->
+        <button onclick="checkAnswers()">Verificar Respostas</button>
+
+        <!-- Contêiner para os botões "Voltar" e "Avançar" -->
+        <div class="button-row">
+            <button onclick="goBack()">Voltar</button>
+            <button onclick="goForward()">Avançar</button>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('input');
+            const correctAnswers = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            let userAnswers = '';
+
+            inputs.forEach((input) => {
+                userAnswers += input.value.toUpperCase();
+            });
+
+            // Formando a resposta correta
+            const correctLetters = 'ACGIKMORWZ'; // letras a serem preenchidas
+            
+            // Verifica se as respostas do usuário correspondem às letras corretas
+            const feedbackMessage = document.getElementById('feedbackMessage');
+            feedbackMessage.style.display = 'block'; // Exibe a mensagem de feedback
+            
+            if (userAnswers === correctLetters) {
+                feedbackMessage.textContent = 'Parabéns, está correto!';
+                feedbackMessage.style.color = 'green'; // Cor verde para feedback positivo
+            } else {
+                feedbackMessage.textContent = 'Ops, verifique sua resposta e tente novamente.';
+                feedbackMessage.style.color = 'red'; // Cor vermelha para feedback negativo
+            }
+        }
+
+        function goBack() {
+            // Lógica para voltar à página anterior
+            alert('Função Voltar não implementada.');
+        }
+
+        function goForward() {
+            // Lógica para avançar para a próxima página
+            alert('Função Avançar não implementada.');
+        }
+    </script>
+
+</body>
+</html>

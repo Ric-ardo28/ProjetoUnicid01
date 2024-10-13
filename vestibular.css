@@ -1,0 +1,62 @@
+/* Estilos globais */
+body {
+    background-color: #b4a1ec;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do logo */
+.logo {
+    width: 50px;
+}
+
+/* Botão personalizado */
+.btn-custom {
+    background-color: #805ad5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+        transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-custom:hover {
+    background-color: #6a41c5;
+}
+
+/* Menu de disciplinas */
+.nav {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-item {
+    margin: 0 10px; /* Espaçamento entre os itens do menu */
+}
+
+/* Centralização do menu */
+.nav justify-content-center {
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .btn-custom {
+        margin-bottom: 10px; /* Adiciona espaço entre os botões em telas menores */
+    }
+}

@@ -1,5 +1,6 @@
 body {
     background-color: #b4a1ec;
+    margin-bottom: 30px;
     
 }
 
@@ -15,6 +16,12 @@ body {
     border-radius: 15px;
     text-align: center;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 250px; /* Largura mínima */
+    max-width: 250px; /* Largura máxima */
+    
 }
 
 .btn-custom {
@@ -31,7 +38,11 @@ body {
 
 .btn-custom:hover {
     background-color: #8b5de3;
+    color: white;
 }
 .logo {
     width: 50px;
+}
+.mt-auto{
+  margin-top: auto;
 }

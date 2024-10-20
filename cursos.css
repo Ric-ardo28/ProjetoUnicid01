@@ -1,48 +1,88 @@
+/* Estilo da página */
 body {
     background-color: #b4a1ec;
     margin-bottom: 30px;
-    
 }
 
-.search-bar {
-    background-color: #f2dede;
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 30px;
+
+
+
+
+/* Efeito hover nos cards */
+.card-custom:hover {
+    transform: scale(1.05); /* Aumenta levemente o card ao passar o mouse */
 }
 
-.card-custom {
-    border: 3px solid black;
-    border-radius: 15px;
-    text-align: center;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-width: 250px; /* Largura mínima */
-    max-width: 250px; /* Largura máxima */
-    
-}
-
+/* Estilo dos botões */
 .btn-custom {
-    
-        background-color: #7b57f2;
-        color: white; /* Cor do texto */
-        border: none; /* Remove a borda */
-        border-radius: 20px; /* Ajuste o valor conforme desejado */
-        padding: 8px 16px; /* Para melhor espaçamento */
-        text-decoration: none; /* Remove o sublinhado */
+    background-color: #7b57f2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
 
-    }
-
-
+/* Efeito hover nos botões */
 .btn-custom:hover {
     background-color: #8b5de3;
     color: white;
 }
+
+/* Logo da Educaí */
 .logo {
     width: 50px;
 }
-.mt-auto{
-  margin-top: auto;
+
+/* Margem automática para alinhar botões no final dos cards */
+.mt-auto {
+    margin-top: auto;
+}
+
+/* Estilo do conteúdo colapsável (expansível) */
+.collapse {
+    padding: 15px;
+    background-color: #f9f9f9; /* Fundo mais claro para o conteúdo expandido */
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+/* Link para visitar página do curso */
+.collapse a {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Estilo para cabeçalho */
+header {
+    background-color: #7b57f2;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+/* Títulos dos cards */
+.card-custom h4 {
+    color: #5a45db;
+}
+
+/* Ajuste no parágrafo do card */
+.card-custom p {
+    color: #555;
+    font-size: 14px;
+}
+
+/* Ajuste no container dos cards */
+.container {
+    margin-top: 30px;
+}
+
+/* Estilo para melhorar o espaçamento no mobile */
+@media (max-width: 768px) {
+    .card-custom {
+        min-width: 100%; /* Ocupa a largura total em telas pequenas */
+    }
 }

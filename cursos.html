@@ -17,51 +17,158 @@
         </div>
         <a class="btn-custom" href="index.html">Home</a>
     </nav>
+
     <!-- Cabeçalho -->
     <header class="text-center py-4">
         <h1 class="fw-bold">Cursos</h1>
         <p>Transforme seu aprendizado em oportunidades com os cursos do Educaí.</p>
-    </header>
-
-   
-   
+    </header>   
 
     <!-- Cards de Cursos -->
-    <div class="container">
-       <div class="row">
-            <!-- Ensino Fundamental -->
-            <div class="col-md-4 col-lg-3 d-flex">
-                <div class="card-custom mb-4 h-100">
-                    <h4>Ensino Fundamental 1</h4>
-                    <p>1° ao 5° ano</p>
-                    <a href="fundamental1.html" class="btn btn-custom mt-auto">Saiba mais</a>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3 d-flex">
-                <div class="card-custom mb-4 h-100">
-                    <h4>Ensino Fundamental 2</h4>
-                    <p>6° ao 9° ano</p>
-                    <a href="fundamental2.html" class="btn btn-custom mt-auto">Saiba mais</a>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3 d-flex">
-                <div class="card-custom mb-4 h-100">
-                    <h4>Ensino Médio</h4>
-                    <p>1º ao 3º ano</p>
-                    <a href="ensinomedio.html" class="btn btn-custom mt-auto">Saiba mais</a>
-                </div>
-            </div>       
-            <!-- Ensino Médio -->
-            <div class="col-md-4 col-lg-3 d-flex">
-                <div class="card-custom mb-4 h-100">
-                    <h4>Vestibular</h4>
-                    <p>Ensino Superior</p>
-                    <a href="vestibular.html" class="btn btn-custom mt-auto">Saiba mais</a>
+    <div class="accordion" id="accordionExample">
+        <!-- Card 1 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Ensino Fundamental 1
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Aqui estão mais informações sobre o Ensino Fundamental 1. Este nível educacional é destinado a alunos do 1° ao 5° ano.
+                    
+                    <li>
+                     <a href="#">Língua Portuguesa</a>
+                    </li>
+                    <li>
+                        <a href="#">Matemática</a>
+                    </li>
+                    <li>
+                        <a href="#">Ciências</a>
+                    </li>
+                    <li>
+                        <a href="#">Artes</a>
+                    </li>
+                    <li>
+                        <a href="#">História</a>
+                    </li>
+                    <li>
+                        <a href="#">Geografia</a>
+                    </li>
+
+                
+                    
                 </div>
             </div>
         </div>
-      </div>
+    
+        <!-- Card 2 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Ensino Fundamental 2
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Informações sobre o Ensino Fundamental 2. Este nível é focado em alunos do 6° ao 9° ano.
+                    <li>
+                        <a href="#">Língua Portuguesa</a>
+                       </li>
+                       <li>
+                           <a href="#">Matemática</a>
+                       </li>
+                       <li>
+                           <a href="#">Ciências</a>
+                       </li>
+                       <li>
+                           <a href="#">Artes</a>
+                       </li>
+                       <li>
+                           <a href="#">História</a>
+                       </li>
+                       <li>
+                           <a href="#">Geografia</a>
+                       </li>
+   
+                    
+                </div>
+            </div>
+        </div>
+    
+        <!-- Card 3 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Ensino Médio
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Mais detalhes sobre o Ensino Médio, voltado para alunos do 1° ao 3° ano com foco em preparação para vestibulares.
+                    <li>
+                        <a href="#">Língua Portuguesa</a>
+                       </li>
+                       <li>
+                           <a href="#">Matemática</a>
+                       </li>
+                       <li>
+                           <a href="#">Ciências</a>
+                       </li>
+                       <li>
+                           <a href="#">Artes</a>
+                       </li>
+                       <li>
+                           <a href="#">História</a>
+                       </li>
+                       <li>
+                           <a href="#">Geografia</a>
+                       </li>
+   
+                    
+                </div>
+            </div>
+        </div>
+    
+        <!-- Card 4 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Vestibular
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Aqui estão mais informações sobre o Vestibular. Este nível educacional é focado em preparar alunos para o Ensino Superior.
+                    <li>
+                        <a href="#">Língua Portuguesa</a>
+                       </li>
+                       <li>
+                           <a href="#">Matemática</a>
+                       </li>
+                       <li>
+                           <a href="#">Ciências</a>
+                       </li>
+                       <li>
+                           <a href="#">Artes</a>
+                       </li>
+                       <li>
+                           <a href="#">História</a>
+                       </li>
+                       <li>
+                           <a href="#">Geografia</a>
+                       </li>
+   
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
+      </div> <!-- Final da row -->
+    </div> <!-- Final do container -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

@@ -3,6 +3,7 @@ body {
     background-color: #b4a1ec;
     color: #333;
     font-family: Arial, sans-serif;
+    margin-bottom: 40px; /* Espaço entre o conteúdo e a borda inferior */
 }
 
 /* Estilo do logo */
@@ -17,7 +18,7 @@ body {
     border: none;
     padding: 10px 20px;
     border-radius: 20px;
-        transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
     text-decoration: none;
 }
 
@@ -29,15 +30,12 @@ body {
 .nav {
     list-style-type: none;
     padding: 0;
+    display: flex; /* Usado para alinhar os itens em linha */
+    justify-content: center; /* Centraliza horizontalmente */
 }
 
 .nav-item {
     margin: 0 10px; /* Espaçamento entre os itens do menu */
-}
-
-/* Centralização do menu */
-.nav justify-content-center {
-    justify-content: center; /* Centraliza horizontalmente */
 }
 
 /* Cabeçalho */

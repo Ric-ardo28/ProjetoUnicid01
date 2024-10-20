@@ -1,4 +1,20 @@
-
+/* Estilo do logo */
+.logo {
+    width: 50px;
+    width: 40px;
+    height: auto;
+}
+.custom-btn:hover {
+    background-color: #6a4fcf; /* Cor ao passar o mouse (opcional) */
+}
+.custom-btn {
+    background-color: #7b57f2;
+    color: rgb(254, 252, 252); /* Cor do texto */
+    border: none; /* Remove a borda */
+    border-radius: 20px; /* Ajuste o valor conforme desejado */
+    padding: 8px 20px; /* Para melhor espaçamento */
+    text-decoration: none;
+}
 body {
     font-family: Arial, sans-serif;
     text-align: center;

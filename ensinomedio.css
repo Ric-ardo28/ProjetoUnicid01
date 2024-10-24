@@ -1,6 +1,6 @@
 /* Estilos globais */
 body {
-    background-color: #b4a1ec;
+    background-color: #dda0dd;
     color: #333;
     font-family: Arial, sans-serif;
     margin-bottom: 40px; /* Espaço entre o conteúdo e a borda inferior */
@@ -13,7 +13,7 @@ body {
 
 /* Botão personalizado */
 .btn-custom {
-    background-color: #805ad5;
+    background-color: #cb6ce6;
     color: white;
     border: none;
     padding: 10px 20px;

@@ -1,65 +1,80 @@
-body {
-    background-color: #333;
-    color: white;
-    font-family: 'Arial', sans-serif;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
+/* chatEdu.css */
 .header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    background-color: #cb6ce6;
     padding: 10px;
-    font-size: 18px;
-    background-color: #343a40;
-}
-
-.header .logo {
-    width: 50px;
-    margin-right: 10px;
-}
-
-.header span {
     color: white;
-    font-size: 24px;
-    font-weight: bold;
+}
+/* chatEdu.css */
+.logoCT {
+    display: flex;
+    align-items: center;  /* Alinha verticalmente no centro */
 }
 
-.header a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
+.logoCT .logo {
+    width: 40px; /* Tamanho da logo */
+    margin-right: 10px; /* Espaço entre a logo e o texto */
 }
 
-.header a:hover {
-    text-decoration: underline;
+.logoCT span {
+    font-size: 24px; /* Tamanho da fonte do texto "ChatEdu" */
+    color: #fff;     /* Cor branca para o texto */
 }
 
-.input-section {
-    margin-top: auto;
-    padding: 20px;
+
+#chat {
+    background-color: #f8f9fa; /* Cor de fundo clara */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
 }
 
-.input-group {
-    background-color: #444;
-    border-radius: 30px;
+#input {
+    width: 100%; /* Ocupa toda a largura disponível */
+}
+.robot-icon {
+    width: 50px;  /* Define o tamanho da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    
+}
+.robot-img {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    margin-bottom: 10px; /* Espaçamento entre a imagem e o input */
 }
 
-.input-group input {
-    background-color: transparent;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    outline: none;
-}
 
-.input-group-text {
-    background-color: transparent;
-    border: none;
+#resposta {
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-
-  .container {
-    min-height: calc(100vh - 60px); /* Ajustar 60px de acordo com a altura do footer */
+#enviar {
+    background-color: #cb6ce6; /* Muda a cor de fundo para Tomate */
+    border-color: #dda0dd; /* Muda a cor da borda para Tomate */
   }
+  
+  #enviar:hover {
+    background-color: #dda0dd; /* Cor quando o botão é passado com o mouse */
+    border-color: #dda0dd; /* Cor da borda quando o botão é passado com o mouse */
+  }
+  /* Estilizando o contêiner da imagem e do título */
+.title-with-icon {
+    display: flex;
+    align-items: center; /* Alinha verticalmente no centro */
+}
+
+/* Ajustando a imagem do robô */
+.title-with-icon img {
+    width: 50px; /* Defina o tamanho da imagem conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-right: 10px; /* Espaçamento entre a imagem e o título */
+}
+
+/* Estilo do título */
+.title-with-icon h2 {
+    margin: 0; /* Remove qualquer margem do h2 */
+}

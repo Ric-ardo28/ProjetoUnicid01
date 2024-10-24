@@ -2,7 +2,7 @@ html,
 body {
     height: 100%;
     margin: 0;
-    background-color: #b4a1ec;
+    background-color: #dda0dd;
 }
 
 .card {
@@ -37,7 +37,7 @@ body {
 
 .btn-custom {
     
-    background-color: #7b57f2;
+    background-color: #cb6ce6;
     color: white; /* Cor do texto */
     border: none; /* Remove a borda */
     border-radius: 20px; /* Ajuste o valor conforme desejado */

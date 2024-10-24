@@ -1,5 +1,5 @@
 .bg-custom {
-    background-color: #b4a1ec;
+    background-color: #dda0dd;
     /* Cor de fundo personalizada */
 }
 
@@ -22,7 +22,7 @@ body {
 }
 
 .custom-btn {
-    background-color: #7b57f2;
+    background-color: #cb6ce6;
     color: rgb(254, 252, 252); /* Cor do texto */
     border: none; /* Remove a borda */
     border-radius: 20px; /* Ajuste o valor conforme desejado */

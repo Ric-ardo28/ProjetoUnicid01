@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    background-color: #b4a1ec;
+    background-color: #dda0dd;
 
     font-family: 'Arial', sans-serif;
     display: flex;
@@ -27,7 +27,7 @@ body {
 }
 
 .btn-continuar {
-    background-color: #7e66f5;
+    background-color: #cb6ce6;
     color: white;
     font-size: 24px;
     padding: 15px 30px;
@@ -35,7 +35,7 @@ body {
 }
 
 .btn-continuar:hover {
-    background-color: #6a55d2;
+    background-color: #cb6ce6;
 }
 
 .btn-continuar:focus {
@@ -43,7 +43,7 @@ body {
 }
 
 .custom-btn {
-    background-color: #7b57f2;
+    background-color: #cb6ce6;
     color: rgb(254, 252, 252); /* Cor do texto */
     border: none; /* Remove a borda */
     border-radius: 20px; /* Ajuste o valor conforme desejado */

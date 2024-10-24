@@ -1,0 +1,11 @@
+header {
+    background-color: #dda0dd;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+/* Estilo do logo */
+.logo {
+    width: 50px;
+}

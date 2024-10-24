@@ -5,10 +5,10 @@
     height: auto;
 }
 .custom-btn:hover {
-    background-color: #6a4fcf; /* Cor ao passar o mouse (opcional) */
+    background-color: #dda0dd; /* Cor ao passar o mouse (opcional) */
 }
 .custom-btn {
-    background-color: #7b57f2;
+    background-color: #cb6ce6;
     color: rgb(254, 252, 252); /* Cor do texto */
     border: none; /* Remove a borda */
     border-radius: 20px; /* Ajuste o valor conforme desejado */

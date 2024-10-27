@@ -28,18 +28,11 @@ body {
 
 .btn-continuar {
     background-color: #cb6ce6;
-    color: white;
+    color: yellow;
     font-size: 24px;
     padding: 15px 30px;
     border-radius: 30px;
-}
-
-.btn-continuar:hover {
-    background-color: #cb6ce6;
-}
-
-.btn-continuar:focus {
-    box-shadow: none;
+    
 }
 
 .custom-btn {
@@ -49,4 +42,7 @@ body {
     border-radius: 20px; /* Ajuste o valor conforme desejado */
     padding: 8px 20px; /* Para melhor espaçamento */
     text-decoration: none;
+}
+.custom-btn:hover{
+    color:black
 }

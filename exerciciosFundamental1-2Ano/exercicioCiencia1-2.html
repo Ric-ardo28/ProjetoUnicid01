@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de Ciências - Dissertativas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="artesFundamental1-2ano.css"> <!-- Arquivo CSS comum -->
+</head>
+<body>
+    <nav class="d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#">
+                <img src="./image/logo_educai.png" alt="Logo Educaí" class="logo me-2">
+            </a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="custom-btn" href="index.html">Home</a>
+    </nav>
+    <h1>Exercício de Ciências</h1>
+    <p>Responda às perguntas abaixo com uma palavra ou uma frase curta:</p>
+    <div class="container">
+        <div class="pergunta">
+            <p>1. Como se chama o astro que ilumina o dia? <input type="text" id="resposta1"> <span class="feedback" id="feedback1"></span></p>
+        </div>
+        <div class="pergunta">
+            <p>2. Que cor geralmente têm as plantas saudáveis? <input type="text" id="resposta2"> <span class="feedback" id="feedback2"></span></p>
+        </div>
+        <div class="pergunta">
+            <p>3. Qual é o nome do gás que respiramos? <input type="text" id="resposta3"> <span class="feedback" id="feedback3"></span></p>
+        </div>
+        <div class="pergunta">
+            <p>4. Qual é a estação do ano em que as flores crescem? <input type="text" id="resposta4"> <span class="feedback" id="feedback4"></span></p>
+        </div>
+        <div class="pergunta">
+            <p>5. O que usamos para proteger a pele do sol? <input type="text" id="resposta5"> <span class="feedback" id="feedback5"></span></p>
+        </div>
+        <div class="buttons">
+            <div class="button-left">
+                <button onclick="voltar()">Voltar</button>
+            </div>
+            <div class="button-right">
+                <button onclick="avancar()">Avançar</button>
+            </div>
+        </div>
+        <div class="centralizado">
+            <button onclick="verificar()">Verificar Respostas</button>
+        </div>
+    </div>
+    <script>
+        function verificar() {
+            const respostasCorretas = [
+                "Sol",      // Astro que ilumina o dia
+                "Verde",    // Cor das plantas saudáveis
+                "Oxigênio", // Gás que respiramos
+                "Primavera",// Estação das flores
+                "Protetor solar" // Proteção da pele contra o sol
+            ];
+            for (let i = 1; i <= 5; i++) {
+                const resposta = document.getElementById(`resposta${i}`).value.toLowerCase().trim();
+                const respostaCorreta = respostasCorretas[i - 1].toLowerCase();
+                const feedbackElement = document.getElementById(`feedback${i}`);
+                if (resposta === respostaCorreta) {
+                    feedbackElement.innerHTML = '✅'; // Emoji de correta ao lado do input
+                } else {
+                    feedbackElement.innerHTML = '❌'; // Emoji de errada ao lado do input
+                }
+            }
+        }
+
+        function voltar() {
+            window.history.back(); // Volta para a página anterior
+        }
+
+        function avancar() {
+            alert("Avançar para a próxima página!"); // Você pode redirecionar aqui
+            // window.location.href = 'proxima_pagina.html'; // Exemplo de redirecionamento
+        }
+
+        // Permite navegar pelos campos com Enter
+        document.addEventListener("DOMContentLoaded", () => {
+            const inputs = document.querySelectorAll("input[type='text']");
+            inputs.forEach((input, index) => {
+                input.addEventListener("keydown", (event) => {
+                    if (event.key === "Enter") {
+                        event.preventDefault();
+                        if (index < inputs.length - 1) {
+                            inputs[index + 1].focus(); // Vai para o próximo input
+                        } else {
+                            verificar(); // Se estiver no último input, verifica as respostas
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

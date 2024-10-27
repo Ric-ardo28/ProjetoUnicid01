@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: #dda0dd; /* Fundo claro para destaque */
+    color: #333; /* Cor do texto */
+}
+.custom-btn{
+    padding: 10px 20px;
+    font-size: 16px; /* Tamanho da fonte */
+    background-color: #cb6ce6; /* Cor de fundo */
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Efeito de transição */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+}
+.custom-btn:hover{
+    color: black;
+}
+
+nav {
+    display: flex;
+    
+}
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+h1 {
+    color: black; /* Cor do título */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+.pergunta {
+    margin: 20px 0; /* Espaço entre as perguntas */
+    text-align: left; /* Alinhamento à esquerda */
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px; /* Tamanho da fonte */
+    border: 2px solid black; /* Borda mais visível */
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s; /* Transição suave na borda */
+}
+
+input[type="text"]:focus {
+    border-color: black; /* Borda ao focar */
+    box-shadow: 0 0 5px rgba(0, 91, 187, 0.5); /* Sombra ao focar */
+}
+
+.feedback {
+    margin-left: 10px;
+    font-size: 20px; /* Tamanho da fonte para feedback */
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button-left,
+.button-right {
+    width: 45%;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px; /* Tamanho da fonte */
+    background-color: #cb6ce6; /* Cor de fundo */
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Efeito de transição */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+}
+
+button:hover {
+    color: black;
+    
+    transform: scale(1.05); /* Aumenta ligeiramente ao passar o mouse */
+}
+
+.centralizado {
+    margin-top: 20px;
+}

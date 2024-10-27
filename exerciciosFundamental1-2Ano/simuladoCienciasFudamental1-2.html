@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de Ciências - Múltipla Escolha</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="artesFundamental1-2ano.css">
+</head>
+<body>
+    <nav class="d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#">
+                <img src="./image/logo_educai.png" alt="Logo Educaí" class="logo me-2">
+            </a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="custom-btn" href="index.html">Home</a>
+    </nav>
+    <h1>Exercício de Ciências</h1>
+    <p>Escolha a alternativa correta para cada pergunta:</p>
+    <div class="container">
+        <div class="pergunta">
+            <p>1. Qual destes animais é um mamífero?</p>
+            <span class="feedback" id="feedback1"></span>
+        </div>
+        <div class="respostas">
+            <input type="radio" id="p1r1" name="p1" value="Leão"> Leão <br>
+            <input type="radio" id="p1r2" name="p1" value="Galinha"> Galinha <br>
+            <input type="radio" id="p1r3" name="p1" value="Sapo"> Sapo <br>
+        </div>
+        <div class="pergunta">
+            <p>2. Qual é a cor das folhas de uma árvore saudável?</p>
+            <span class="feedback" id="feedback2"></span>
+        </div>
+        <div class="respostas">
+            <input type="radio" id="p2r1" name="p2" value="Verde"> Verde <br>
+            <input type="radio" id="p2r2" name="p2" value="Roxo"> Roxo <br>
+            <input type="radio" id="p2r3" name="p2" value="Cinza"> Cinza <br>
+        </div>
+        <div class="pergunta">
+            <p>3. Qual das opções é uma fruta?</p>
+            <span class="feedback" id="feedback3"></span>
+        </div>
+        <div class="respostas">
+            <input type="radio" id="p3r1" name="p3" value="Maçã"> Maçã <br>
+            <input type="radio" id="p3r2" name="p3" value="Batata"> Batata <br>
+            <input type="radio" id="p3r3" name="p3" value="Cenoura"> Cenoura <br>
+        </div>
+        <div class="pergunta">
+            <p>4. Qual destes elementos encontramos na água do mar?</p>
+            <span class="feedback" id="feedback4"></span>
+        </div>
+        <div class="respostas">
+            <input type="radio" id="p4r1" name="p4" value="Sal"> Sal <br>
+            <input type="radio" id="p4r2" name="p4" value="Açúcar"> Açúcar <br>
+            <input type="radio" id="p4r3" name="p4" value="Mel"> Mel <br>
+        </div>
+        <div class="pergunta">
+            <p>5. Qual destes astros é o centro do nosso Sistema Solar?</p>
+            <span class="feedback" id="feedback5"></span>
+        </div>
+        <div class="respostas">
+            <input type="radio" id="p5r1" name="p5" value="Lua"> Lua <br>
+            <input type="radio" id="p5r2" name="p5" value="Terra"> Terra <br>
+            <input type="radio" id="p5r3" name="p5" value="Sol"> Sol <br>
+        </div>
+        <div class="pergunta">
+            <p>6. Qual destes é um exemplo de água em estado sólido?</p>
+            <span class="feedback" id="feedback6"></span>
+        </div>
+        <div class="respostas">
+            <input type="radio" id="p6r1" name="p6" value="Gelo"> Gelo <br>
+            <input type="radio" id="p6r2" name="p6" value="Vapor"> Vapor <br>
+            <input type="radio" id="p6r3" name="p6" value="Chuva"> Chuva <br>
+        </div>
+        <div class="buttons">
+            <div class="button-left">
+                <button onclick="voltar()">Voltar</button>
+            </div>
+            <div class="button-right">
+                <button onclick="avancar()">Avançar</button>
+            </div>
+        </div>
+        <div class="centralizado">
+            <button onclick="verificar()">Verificar Respostas</button>
+        </div>
+    </div>
+    <script>
+        function verificar() {
+            const respostasCorretas = ["Leão", "Verde", "Maçã", "Sal", "Sol", "Gelo"];
+            for (let i = 1; i <= 6; i++) {
+                const radios = document.getElementsByName(`p${i}`);
+                let respostaSelecionada = "";
+
+                for (const radio of radios) {
+                    if (radio.checked) {
+                        respostaSelecionada = radio.value;
+                        break;
+                    }
+                }
+
+                const feedbackElement = document.getElementById(`feedback${i}`);
+
+                if (respostaSelecionada === respostasCorretas[i - 1]) {
+                    feedbackElement.innerHTML = '✅'; // Emoji de correta ao lado da pergunta
+                } else {
+                    feedbackElement.innerHTML = '❌'; // Emoji de errada ao lado da pergunta
+                }
+            }
+        }
+
+        function voltar() {
+            window.history.back(); // Volta para a página anterior
+        }
+
+        function avancar() {
+            alert("Avançar para a próxima página!"); // Você pode redirecionar aqui
+            // window.location.href = 'proxima_pagina.html'; // Exemplo de redirecionamento
+        }
+    </script>
+</body>
+</html>

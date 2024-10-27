@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de Geografia - Múltipla Escolha</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="artesFundamental1-2ano.css">
+</head>
+<body>
+    <nav class="d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#">
+                <img src="./image/logo_educai.png" alt="Logo Educaí" class="logo me-2">
+            </a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="custom-btn" href="index.html">Home</a>
+    </nav>
+    <h1>Exercício de Geografia</h1>
+    <p>Responda às perguntas abaixo:</p>
+    <div class="container">
+        <div class="pergunta">
+            <p>1. Qual é o continente onde fica o Brasil? <span class="feedback" id="feedback1"></span></p>
+            <label><input type="radio" name="pergunta1" value="América">América</label><br>
+            <label><input type="radio" name="pergunta1" value="África">África</label><br>
+            <label><input type="radio" name="pergunta1" value="Ásia">Ásia</label>
+        </div>
+        <div class="pergunta">
+            <p>2. Qual é a capital do Brasil? <span class="feedback" id="feedback2"></span></p>
+            <label><input type="radio" name="pergunta2" value="Brasília">Brasília</label><br>
+            <label><input type="radio" name="pergunta2" value="Rio de Janeiro">Rio de Janeiro</label><br>
+            <label><input type="radio" name="pergunta2" value="São Paulo">São Paulo</label>
+        </div>
+        <div class="pergunta">
+            <p>3. Qual desses é um grande rio do Brasil? <span class="feedback" id="feedback3"></span></p>
+            <label><input type="radio" name="pergunta3" value="Rio Amazonas">Rio Amazonas</label><br>
+            <label><input type="radio" name="pergunta3" value="Rio de Janeiro">Rio de Janeiro</label><br>
+            <label><input type="radio" name="pergunta3" value="Rio Paraná">Rio Paraná</label>
+        </div>
+        <div class="pergunta">
+            <p>4. O que é a Amazônia? <span class="feedback" id="feedback4"></span></p>
+            <label><input type="radio" name="pergunta4" value="Uma floresta">Uma floresta</label><br>
+            <label><input type="radio" name="pergunta4" value="Uma montanha">Uma montanha</label><br>
+            <label><input type="radio" name="pergunta4" value="Uma cidade">Uma cidade</label>
+        </div>
+        <div class="pergunta">
+            <p>5. O que são biomas? <span class="feedback" id="feedback5"></span></p>
+            <label><input type="radio" name="pergunta5" value="Lugares com plantas e animais">Lugares com plantas e animais</label><br>
+            <label><input type="radio" name="pergunta5" value="Cidades grandes">Cidades grandes</label><br>
+            <label><input type="radio" name="pergunta5" value="Água e peixes">Água e peixes</label>
+        </div>
+        <div class="buttons">
+            <div class="button-left">
+                <button class="custom-btn" onclick="voltar()">Voltar</button>
+            </div>
+            <div class="button-right">
+                <button class="custom-btn" onclick="avancar()">Avançar</button>
+            </div>
+        </div>
+        <div class="centralizado">
+            <button class="custom-btn" onclick="verificar()">Verificar Respostas</button>
+        </div>
+    </div>
+    <script>
+        function verificar() {
+            const respostasCorretas = ['América', 'Brasília', 'Rio Amazonas', 'Uma floresta', 'Lugares com plantas e animais'];
+            for (let i = 1; i <= 5; i++) {
+                const selectedOption = document.querySelector(`input[name="pergunta${i}"]:checked`);
+                const feedbackElement = document.getElementById(`feedback${i}`);
+                feedbackElement.style.display = "inline";
+                if (selectedOption) {
+                    const resposta = selectedOption.value;
+                    if (respostasCorretas[i - 1] === resposta) {
+                        feedbackElement.innerHTML = "✅"; 
+                    } else {
+                        feedbackElement.innerHTML = "❌"; 
+                    }
+                } else {
+                    feedbackElement.innerHTML = "❌"; 
+                }
+            }
+        }
+
+        function voltar() {
+            window.history.back();
+        }
+
+        function avancar() {
+            alert("Avançar para a próxima página!");
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de Matemática - Dissertativa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="artesFundamental1-2ano.css">
+</head>
+<body>
+    <nav class="d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#">
+                <img src="./image/logo_educai.png" alt="Logo Educaí" class="logo me-2">
+            </a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="custom-btn" href="index.html">Home</a>
+    </nav>
+    <h1>Exercício de Matemática</h1>
+    <p>Responda às perguntas abaixo:</p>
+    <div class="container">
+        <div class="pergunta">
+            <p>1. Quanto é 7 + 2? <input type="text" id="resposta1"> <span class="feedback" id="feedback1"></span></p>
+        </div>
+        <div class="pergunta">
+            <p>2. Quanto é 15 - 6? <input type="text" id="resposta2"> <span class="feedback" id="feedback2"></span></p>
+        </div>
+        <div class="pergunta">
+            <p>3. Quanto é 8 x 3? <input type="text" id="resposta3"> <span class="feedback" id="feedback3"></span></p>
+        </div>
+        <div class="pergunta">
+            <p>4. Quanto é 20 ÷ 5? <input type="text" id="resposta4"> <span class="feedback" id="feedback4"></span></p>
+        </div>
+        <div class="pergunta">
+            <p>5. Quanto é 12 + 8? <input type="text" id="resposta5"> <span class="feedback" id="feedback5"></span></p>
+        </div>
+        <div class="pergunta">
+            <p>6. Quanto é 18 - 11? <input type="text" id="resposta6"> <span class="feedback" id="feedback6"></span></p>
+        </div>
+        <div class="pergunta">
+            <p>7. Quanto é 5 x 5? <input type="text" id="resposta7"> <span class="feedback" id="feedback7"></span></p>
+        </div>
+        <div class="pergunta">
+            <p>8. Quanto é 30 ÷ 6? <input type="text" id="resposta8"> <span class="feedback" id="feedback8"></span></p>
+        </div>
+        <div class="pergunta">
+            <p>9. Quanto é 14 + 7? <input type="text" id="resposta9"> <span class="feedback" id="feedback9"></span></p>
+        </div>
+        <div class="pergunta">
+            <p>10. Quanto é 27 - 15? <input type="text" id="resposta10"> <span class="feedback" id="feedback10"></span></p>
+        </div>
+        <div class="buttons">
+            <div class="button-left">
+                <button class="custom-btn" onclick="voltar()">Voltar</button>
+            </div>
+            <div class="button-right">
+                <button class="custom-btn" onclick="avancar()">Avançar</button>
+            </div>
+        </div>
+        <div class="centralizado">
+            <button class="custom-btn" onclick="verificar()">Verificar Respostas</button>
+        </div>
+    </div>
+    <script>
+        function verificar() {
+            const respostas = [9, 9, 24, 4, 20, 7, 25, 5, 21, 12];
+            for (let i = 1; i <= 10; i++) {
+                const resposta = document.getElementById(`resposta${i}`).value;
+                const feedbackElement = document.getElementById(`feedback${i}`);
+                if (parseInt(resposta) === respostas[i - 1]) {
+                    feedbackElement.innerHTML = "✅"; // Emoji de certo
+                } else {
+                    feedbackElement.innerHTML = "❌"; // Emoji de errado
+                }
+            }
+        }
+
+        // Função para navegar entre os inputs ao pressionar Enter
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Evita que o Enter envie o formulário
+                const inputs = document.querySelectorAll('input[type="text"]');
+                for (let i = 0; i < inputs.length; i++) {
+                    if (inputs[i] === document.activeElement && i < inputs.length - 1) {
+                        inputs[i + 1].focus(); // Foca no próximo input
+                        break;
+                    }
+                }
+            }
+        });
+
+        function voltar() {
+            window.history.back(); // Volta para a página anterior
+        }
+
+        function avancar() {
+            alert("Avançar para a próxima página!"); // Você pode redirecionar aqui
+            // window.location.href = 'proxima_pagina.html'; // Exemplo de redirecionamento
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

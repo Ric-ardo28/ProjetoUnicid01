@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.pergunta {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feedback {
+    display: inline-block;
+    width: 30px;
+    margin-left: 10px;
+    font-size: 20px; /* Aumenta o tamanho do emoji */
+}
+
+.respostas {
+    margin-left: 10px;
+    text-align: left;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button, .custom-btn {
+    background-color: #cb6ce6;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .custom-btn:hover {
+    color: black;
+}
+
+.centralizado {
+    text-align: center;
+    margin: 20px 0;
+}
+.logo {
+        width: 50px;
+        height: auto;
+        margin-right: 20px; /* Espaçamento à direita */
+        margin-left: 10px; /* Espaçamento à esquerda */
+    
+}

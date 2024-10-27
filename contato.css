@@ -45,3 +45,6 @@ body {
     text-decoration: none; /* Remove o sublinhado */
 
 }
+.btn-custom:hover {
+    color: #000;
+}

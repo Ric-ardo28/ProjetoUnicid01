@@ -32,6 +32,9 @@ body {
     color: white;
     font-weight: bold;
 }
+.login-container button:hover{
+    color:black
+}
 
 .logo {
     width: 50px;
@@ -69,4 +72,7 @@ body {
     border-radius: 20px; /* Ajuste o valor conforme desejado */
     padding: 8px 20px; /* Para melhor espaçamento */
     text-decoration: none;
+}
+.custom-btn:hover{
+    color:black
 }

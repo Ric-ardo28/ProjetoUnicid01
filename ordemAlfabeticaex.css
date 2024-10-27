@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: #dda0dd; /* Fundo claro para destaque */
+    color: #333; /* Cor do texto */
+}
+
+
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+.custom-btn {
+    background-color: #cb6ce6;
+    color: #fff; /* Cor do texto */
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s; /* Efeitos de transição */
+}
+
+.custom-btn:hover {
+    color: black;
+    background-color: #cb6ce6; /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Aumenta ligeiramente ao passar o mouse */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff; /* Fundo claro para o contêiner */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para efeito de profundidade */
+}
+
+.grid {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.list, .scrambled {
+    width: 45%;
+}
+
+.input {
+    width: 100px;
+    text-align: center;
+    font-size: 18px; /* Tamanho da fonte */
+    border: 2px solid #007bff; /* Borda mais visível */
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px; /* Espaçamento entre os inputs */
+}
+
+.input:focus {
+    border-color: #0056b3; /* Borda ao focar */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 91, 187, 0.5); /* Sombra ao focar */
+}
+
+.feedback-icon {
+    margin-left: 10px;
+}
+
+.feedback {
+    margin-top: 20px; /* Espaçamento acima do feedback */
+    font-size: 20px; /* Tamanho da fonte para feedback */
+    font-weight: bold; /* Negrito para destacar */
+    display: none; /* Inicialmente oculto */
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+    padding: 0 20px; /* Margens laterais para espaçamento */
+}
+
+button {
+    padding: 15px 30px; /* Tamanho do botão */
+    font-size: 18px; /* Tamanho da fonte */
+    background-color: #cb6ce6; /* Cor de fundo */
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Efeito de transição */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+}
+
+button:hover {
+    color: black;
+   
+    transform: scale(1.05); /* Aumenta ligeiramente ao passar o mouse */
+}

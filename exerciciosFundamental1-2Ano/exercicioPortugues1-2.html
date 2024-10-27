@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de Sílabas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="artesFundamental1-2ano.css">
+</head>
+<body>
+    <nav class="d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#">
+                <img src="./image/logo_educai.png" alt="Logo Educaí" class="logo me-2">
+            </a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="custom-btn" href="index.html">Home</a>
+    </nav>
+    <h1>Exercício: Separe as Sílabas</h1>
+    <h2>Complete as sílabas das palavras:</h2>
+    <div class="container">
+        <p>1. CELULAR - <input type="text" id="input1-1" class="input" onkeypress="navigate(event, 'input1-2')"><input type="text" id="input1-2" class="input" onkeypress="navigate(event, 'input1-3')"><input type="text" id="input1-3" class="input"><span id="icon1" class="feedback-icon"></span></p>
+        <p>2. ALICATE - <input type="text" id="input2-1" class="input" onkeypress="navigate(event, 'input2-2')"><input type="text" id="input2-2" class="input" onkeypress="navigate(event, 'input2-3')"><input type="text" id="input2-3" class="input" onkeypress="navigate(event, 'input2-4')"><input type="text" id="input2-4" class="input"><span id="icon2" class="feedback-icon"></span></p>
+        <p>3. FURADEIRA - <input type="text" id="input3-1" class="input" onkeypress="navigate(event, 'input3-2')"><input type="text" id="input3-2" class="input" onkeypress="navigate(event, 'input3-3')"><input type="text" id="input3-3" class="input" onkeypress="navigate(event, 'input3-4')"><input type="text" id="input3-4" class="input"><span id="icon3" class="feedback-icon"></span></p>
+        <p>4. CORAÇÃO - <input type="text" id="input4-1" class="input" onkeypress="navigate(event, 'input4-2')"><input type="text" id="input4-2" class="input" onkeypress="navigate(event, 'input4-3')"><input type="text" id="input4-3" class="input"><span id="icon4" class="feedback-icon"></span></p>
+        <p>5. PATO - <input type="text" id="input5-1" class="input" onkeypress="navigate(event, 'input5-2')"><input type="text" id="input5-2" class="input"><span id="icon5" class="feedback-icon"></span></p>
+        <p>6. TESOURA - <input type="text" id="input6-1" class="input" onkeypress="navigate(event, 'input6-2')"><input type="text" id="input6-2" class="input" onkeypress="navigate(event, 'input6-3')"><input type="text" id="input6-3" class="input"><span id="icon6" class="feedback-icon"></span></p>
+        <p>7. TREVO - <input type="text" id="input7-1" class="input" onkeypress="navigate(event, 'input7-2')"><input type="text" id="input7-2" class="input"><span id="icon7" class="feedback-icon"></span></p>
+        <p>8. MACACO - <input type="text" id="input8-1" class="input" onkeypress="navigate(event, 'input8-2')"><input type="text" id="input8-2" class="input" onkeypress="navigate(event, 'input8-3')"><input type="text" id="input8-3" class="input"><span id="icon8" class="feedback-icon"></span></p>
+        <p>9. BALEIA - <input type="text" id="input9-1" class="input" onkeypress="navigate(event, 'input9-2')"><input type="text" id="input9-2" class="input" onkeypress="navigate(event, 'input9-3')"><input type="text" id="input9-3" class="input"><span id="icon9" class="feedback-icon"></span></p>
+        <p>10. MESA - <input type="text" id="input10-1" class="input" onkeypress="navigate(event, 'input10-2')"><input type="text" id="input10-2" class="input"><span id="icon10" class="feedback-icon"></span></p>
+        <p>11. CADEIRA - <input type="text" id="input11-1" class="input" onkeypress="navigate(event, 'input11-2')"><input type="text" id="input11-2" class="input" onkeypress="navigate(event, 'input11-3')"><input type="text" id="input11-3" class="input"><span id="icon11" class="feedback-icon"></span></p>
+        <p>12. CASA - <input type="text" id="input12-1" class="input" onkeypress="navigate(event, 'input12-2')"><input type="text" id="input12-2" class="input"><span id="icon12" class="feedback-icon"></span></p>
+        <p>13. RELÓGIO - <input type="text" id="input13-1" class="input" onkeypress="navigate(event, 'input13-2')"><input type="text" id="input13-2" class="input" onkeypress="navigate(event, 'input13-3')"><input type="text" id="input13-3" class="input"><span id="icon13" class="feedback-icon"></span></p>
+        </div>
+        <div class="buttons">
+            <button class="custom-btn" onclick="goBack()">Voltar</button>
+            <button class="custom-btn" id="verifyButton" onclick="checkSyllables()">Verificar</button>
+            <button class="custom-btn" onclick="goForward()">Avançar</button>
+        </div>
+        <script>
+             function goBack() {
+            alert("Função de voltar implementada!");
+        }
+
+        function goForward() {
+            alert("Função de avançar implementada!");
+        }
+
+        function navigate(event, nextInputId) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Evita o comportamento padrão do Enter
+                const nextInput = document.getElementById(nextInputId);
+                if (nextInput) {
+                    nextInput.focus(); // Foca no próximo input
+                }
+            }
+        }
+
+        function checkSyllables() {
+            const correctSyllables = [
+                ["CE", "LU", "LAR"],     // celular
+                ["A", "LI", "CA", "TE"], // alicate
+                ["FU", "RA", "DEI", "RA"], // furadeira
+                ["CO", "RA", "ÇÃO"],     // coração
+                ["PA", "TO"],             // pato
+                ["TE", "SOU", "RA"],      // tesoura
+                ["TRE", "VO"],            // trevo
+                ["MA", "CA", "CO"],       // macaco
+                ["BA", "LEI", "A"],       // baleia
+                ["ME", "SA"],             // mesa
+                ["CA", "DEI", "RA"],      // cadeira
+                ["CA", "SA"],             // casa
+                ["RE", "LÓ", "GIO"],      // relógio
+            ];
+
+            for (let i = 0; i < correctSyllables.length; i++) {
+                let userInputs = [];
+                for (let j = 1; j <= correctSyllables[i].length; j++) {
+                    userInputs.push(document.getElementById(`input${i + 1}-${j}`).value.toUpperCase());
+                }
+                const isCorrect = JSON.stringify(userInputs) === JSON.stringify(correctSyllables[i]);
+                const icon = document.getElementById(`icon${i + 1}`);
+                icon.textContent = isCorrect ? "✅" : "❌"; // Adiciona ícones de feedback
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+    

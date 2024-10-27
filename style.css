@@ -29,10 +29,11 @@ body {
     padding: 8px 20px; /* Para melhor espaçamento */
     text-decoration: none;
 }
-
-.custom-btn:hover {
-    background-color: #6a4fcf; /* Cor ao passar o mouse (opcional) */
+.custom-btn:hover{
+    color:black
 }
+
+
 
 
 

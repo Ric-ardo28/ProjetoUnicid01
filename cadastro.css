@@ -15,6 +15,9 @@ body {
     padding: 8px 20px; /* Para melhor espaçamento */
     text-decoration: none;
 }
+.custom-btn:hover {
+    color: black;
+}
 
 .login-container {
     background-color: #d3d3d3;
@@ -39,6 +42,9 @@ body {
     background-color: #cb6ce6;
     color: white;
     font-weight: bold;
+}
+.login-container button:hover {
+    color: black;
 }
 
 .logo {

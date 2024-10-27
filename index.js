@@ -7,7 +7,7 @@ const genAI = new GoogleGenerativeAI(process.env.API_GOOGLE);
 async function enviarPergunta(pergunta) {
   const model = genAI.getGenerativeModel({
     model: 'gemini-1.5-flash',
-    systemInstruction: 'Você é um chatbot "Edu" de um site educacional seu objetivo é auxiliar alunos em suas dúvidas sobre diversos assuntos.'
+    systemInstruction: 'Você é um chatbot "Edu" de um site educacional. Seu objetivo é auxiliar alunos em suas dúvidas sobre diversos assuntos.'
   });
 
   try {

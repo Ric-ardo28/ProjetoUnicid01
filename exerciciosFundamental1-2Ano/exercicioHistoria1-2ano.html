@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de História</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="artesFundamental1-2ano.css">
+</head>
+<body>
+    <nav class="d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#">
+                <img src="./image/logo_educai.png" alt="Logo Educaí" class="logo me-2">
+            </a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="custom-btn" href="index.html">Home</a>
+    </nav>
+    <h1>Exercício de História</h1>
+    <p>Sobre os primeiros habitantes do Brasil, complete com as palavras do quadro.</p>
+    <div class="container">
+        <div class="quadro">
+            <strong>Palavras:</strong> CORPO - TRIBOS - BRASIL - OCAS
+        </div>
+        <div class="pergunta">
+            <p>a) Os índios foram os primeiros habitantes do: <input type="text" id="resposta1"> <span class="feedback" id="feedback1"></span></p>
+        </div>
+        <div class="pergunta">
+            <p>b) Eles viviam em grupos chamados: <input type="text" id="resposta2"> <span class="feedback" id="feedback2"></span></p>
+        </div>
+        <div class="pergunta">
+            <p>c) Eles pintavam o: <input type="text" id="resposta3"> <span class="feedback" id="feedback3"></span></p>
+        </div>
+        <div class="pergunta">
+            <p>d) Eles moravam em casas chamadas: <input type="text" id="resposta4"> <span class="feedback" id="feedback4"></span></p>
+        </div>
+        <div class="buttons">
+            <div class="button-left">
+                <button class="custom-btn" onclick="voltar()">Voltar</button>
+            </div>
+            <div class="button-right">
+                <button class="custom-btn" onclick="avancar()">Avançar</button>
+            </div>
+        </div>
+        <div class="centralizado">
+            <button class="custom-btn" onclick="verificar()">Verificar Respostas</button>
+        </div>
+    </div>
+    <script>
+        function verificar() {
+            const respostas = ["BRASIL", "TRIBOS", "CORPO", "OCAS"];
+            for (let i = 1; i <= 4; i++) {
+                const resposta = document.getElementById(`resposta${i}`).value.toUpperCase();
+                const feedbackElement = document.getElementById(`feedback${i}`);
+                if (resposta === respostas[i - 1]) {
+                    feedbackElement.innerHTML = "✅"; 
+                } else {
+                    feedbackElement.innerHTML = "❌"; 
+                }
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                const inputs = document.querySelectorAll('input[type="text"]');
+                for (let i = 0; i < inputs.length; i++) {
+                    if (inputs[i] === document.activeElement && i < inputs.length - 1) {
+                        inputs[i + 1].focus();
+                        break;
+                    }
+                }
+            }
+        });
+
+        function voltar() {
+            window.history.back();
+        }
+
+        function avancar() {
+            alert("Avançar para a próxima página!");
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

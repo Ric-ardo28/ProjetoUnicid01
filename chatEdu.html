@@ -13,26 +13,26 @@
             <img src="./image/robotCT.png" alt="Logo Educaí" class="logo">
             <span>ChatEdu</span>
         </div>
-        <a href="index.html" class="text-white">Voltar ao menu</a>
+        <a href="index.html" class="custom-btn">Voltar ao menu</a>
     </div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 col-sm-12">
                 <div id="chat" class="p-3 mb-2 bg-light text-dark">
-                    
                     <div class="title-with-icon">
                         <h2>ChatEdu</h2>
                         <img src="./image/robotDC.png" alt="Robot DC" class="robot-icon">
-                        
                     </div>
-                    <div id="messages"></div>
-                   
-                    <input type="text" id="input" class="form-control mb-2" aria-label="Faça sua pergunta estudante">
+                    <div><p>Fui criado por estudantes da UNICID, ajudo você com dúvidas nas atividades.</p></div>
+                    <div id="messages">
+                      <div class="message"><strong>ChatEdu🤖:</strong> Bem-vindo ao ChatEdu! Como posso ajudar você hoje?</div>
+                      
+                    </div>
+                    <input type="text" id="input" class="form-control mb-2" placeholder="Faça sua pergunta estudante">
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <button onclick="sendMessage()" id="enviar" class="btn btn-primary me-md-2">Enviar</button>
                         <button onclick="limparResposta()" id="limpar" class="btn btn-secondary">Limpar</button>
                     </div>
-                    <div id="resposta"></div>
                 </div>
             </div>
         </div>

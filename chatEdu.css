@@ -2,11 +2,12 @@
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #cb6ce6;
-    padding: 10px;
+    background-color: #007bff;
     color: white;
-}
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
 /* chatEdu.css */
 .logoCT {
     display: flex;
@@ -25,9 +26,10 @@
 
 
 #chat {
-    background-color: #f8f9fa; /* Cor de fundo clara */
-    border-radius: 10px; /* Bordas arredondadas */
-    padding: 20px; /* Espaçamento interno */
+    background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #input {
@@ -78,3 +80,43 @@
 .title-with-icon h2 {
     margin: 0; /* Remove qualquer margem do h2 */
 }
+.custom-btn {
+    background-color: #cb6ce6;
+    color: rgb(254, 252, 252); /* Cor do texto */
+    border: none; /* Remove a borda */
+    border-radius: 20px; /* Ajuste o valor conforme desejado */
+    padding: 8px 20px; /* Para melhor espaçamento */
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.custom-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+#messages {
+    max-height: 300px; /* Ajuste conforme necessário */
+    overflow-y: auto; /* Habilita a barra de rolagem vertical */
+    background-color: #f8f9fa; /* Cor de fundo */
+    padding: 10px;
+    border: 1px solid #ddd; /* Bordas */
+    border-radius: 5px; /* Bordas arredondadas */
+  }
+  body {
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+    font-family: 'Roboto', sans-serif;
+  }
+  .message.user {
+    background-color: #cce5ff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .message.edu {
+    background-color: #d4edda;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  

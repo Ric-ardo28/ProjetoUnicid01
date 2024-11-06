@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Forme Palavras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dda0dd;
+            color: #333;
+            margin: 20px;
+        }
+        .container {
+            background-color: #dda0dd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #6a5acd;
+        }
+        .syllables {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .syllable {
+            position: relative;
+            margin: 10px;
+            padding: 15px;
+            border: 2px solid #6a5acd;
+            border-radius: 8px;
+            background-color: #f0f8ff;
+            font-size: 1.5em;
+            text-align: center;
+            min-width: 60px;
+        }
+        .number {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            background-color: #6a5acd;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+        .input-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        input[type="text"] {
+            margin: 0 5px;
+            padding: 10px;
+            border: 2px solid #6a5acd;
+            border-radius: 4px;
+            font-size: 1.2em;
+            width: 100px;
+        }
+        .correct {
+            border-color: green;
+        }
+        .error {
+            border-color: red;
+        }
+        .button-container {
+            margin: 20px 0;
+        }
+       
+        .result {
+            margin-top: 10px;
+        }
+        .error-icon {
+            color: red;
+            margin-left: 5px;
+        }
+        .correct-icon {
+            color: green;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>FORME PALAVRAS OBSERVANDO OS NÚMEROS INDICADOS EM CADA SÍLABA.</h1>
+    <div class="syllables">
+        <div class="syllable"><div class="number">1</div>MO</div>
+        <div class="syllable"><div class="number">2</div>CA</div>
+        <div class="syllable"><div class="number">3</div>SA</div>
+        <div class="syllable"><div class="number">4</div>PO</div>
+        <div class="syllable"><div class="number">5</div>MA</div>
+        <div class="syllable"><div class="number">6</div>CO</div>
+        <div class="syllable"><div class="number">7</div>TO</div>
+        <div class="syllable"><div class="number">8</div>TE</div>
+    </div>
+
+    <div class="input-container">
+        <div><div class="number">1</div>1  7: <input type="text" placeholder="Palavra 1" id="answer1" onkeydown="moveToNext(event, 'answer2')" oninput="updateFeedback()"></div>
+        <div><div class="number">2</div>5  2  6: <input type="text" placeholder="Palavra 2" id="answer2" onkeydown="moveToNext(event, 'answer3')" oninput="updateFeedback()"></div>
+        <div><div class="number">3</div>2  3: <input type="text" placeholder="Palavra 3" id="answer3" onkeydown="moveToNext(event, 'answer4')" oninput="updateFeedback()"></div>
+        <div><div class="number">4</div>4  8: <input type="text" placeholder="Palavra 4" id="answer4" onkeydown="moveToNext(event, 'answer5')" oninput="updateFeedback()"></div>
+        <div><div class="number">5</div>2  5: <input type="text" placeholder="Palavra 5" id="answer5" onkeydown="moveToNext(event, 'answer6')" oninput="updateFeedback()"></div>
+        <div><div class="number">6</div>5  7: <input type="text" placeholder="Palavra 6" id="answer6" onkeydown="moveToNext(event, 'answer7')" oninput="updateFeedback()"></div>
+        <div><div class="number">7</div>3  4: <input type="text" placeholder="Palavra 7" id="answer7" onkeydown="moveToNext(event, 'answer8')" oninput="updateFeedback()"></div>
+        <div><div class="number">8</div>7  5  8: <input type="text" placeholder="Palavra 8" id="answer8" onkeydown="moveToNext(event, 'checkAnswers')" oninput="updateFeedback()"></div>
+    </div>
+    
+    <div class="button-container">
+        <button class="button" onclick="goBack()">Voltar</button>
+        <button class="button" onclick="checkAnswers()">Avançar</button>
+    </div>
+
+    <div id="result" class="input-container"></div>
+</div>
+
+<script>
+    function moveToNext(event, nextFieldId) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Impede o comportamento padrão do Enter
+            document.getElementById(nextFieldId).focus(); // Move o foco para o próximo campo
+        }
+    }
+
+    function updateFeedback() {
+        const inputFields = document.querySelectorAll('input[type="text"]');
+        
+        inputFields.forEach((inputField) => {
+            const resultDiv = inputField.parentNode.querySelector('.result-icon');
+            if (resultDiv) {
+                resultDiv.remove(); // Remove o sinal anterior de todos os inputs
+            }
+            inputField.classList.remove("correct", "error"); // Limpa estilos de todos os inputs
+        });
+    }
+
+    function checkAnswers() {
+        const answers = [
+            { expected: "MOTO", elementId: "answer1" },
+            { expected: "MACACO", elementId: "answer2" },
+            { expected: "CASA", elementId: "answer3" },
+            { expected: "POTE", elementId: "answer4" },
+            { expected: "CAMA", elementId: "answer5" }, 
+            { expected: "MATO", elementId: "answer6" },
+            { expected: "SAPO", elementId: "answer7" },
+            { expected: "TOMATE", elementId: "answer8" }, 
+        ];
+        
+        let resultMessage = "<h2>Resultados:</h2>";
+        let allCorrect = true;
+
+        // Limpa resultados anteriores
+        document.getElementById("result").innerHTML = "";
+
+        answers.forEach((answer) => {
+            const userAnswer = document.getElementById(answer.elementId).value.toUpperCase();
+            const inputField = document.getElementById(answer.elementId);
+            const resultDiv = document.createElement('div');
+            resultDiv.className = 'result-icon';
+
+            if (userAnswer === answer.expected) {
+                resultDiv.innerHTML = `<span class="correct-icon">✅</span>`;
+                inputField.classList.add("correct");
+                inputField.classList.remove("error");
+            } else {
+                resultDiv.innerHTML = `<span class="error-icon">❌</span>`;
+                inputField.classList.add("error");
+                inputField.classList.remove("correct");
+                allCorrect = false;
+            }
+            inputField.parentNode.appendChild(resultDiv);
+        });
+
+        if (!allCorrect) {
+            alert("Por favor, corrija as palavras incorretas antes de avançar.");
+        } else {
+            resultMessage += "<p>Parabéns! Você acertou todas as palavras.</p>";
+            document.getElementById("result").innerHTML = resultMessage;
+        }
+    }
+
+    function goBack() {
+        alert("Você clicou em voltar. Implementar a funcionalidade de voltar se necessário.");
+    }
+</script>
+
+</body>
+</html>

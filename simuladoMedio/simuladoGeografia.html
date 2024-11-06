@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/ensinomedio.css"> 
+    <title>Exercício de Geografia - 3º Ano do Ensino Médio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .pergunta {
+            margin: 30px 0;
+            text-align: left;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .feedback {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .centralizado {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#"><img src="/image/logo_educai.png" alt="Logo Educaí" class="logo me-2"></a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="btn-custom" href="/cursos.html">Home</a>
+    </nav>
+    <h1>Exercício de Geografia - 3º Ano do Ensino Médio</h1>
+    <p>Escolha a alternativa correta:</p>
+
+    <div class="pergunta">
+        <p>1. O que é a urbanização?</p>
+        <input type="radio" id="g1a1" name="g1" value="A">
+        <label for="g1a1">A) O crescimento das áreas rurais</label><br>
+        <input type="radio" id="g1a2" name="g1" value="B">
+        <label for="g1a2">B) O aumento da população nas cidades</label><br>
+        <input type="radio" id="g1a3" name="g1" value="C">
+        <label for="g1a3">C) A migração para o campo</label><br>
+        <span class="feedback" id="feedback1"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>2. O que é globalização?</p>
+        <input type="radio" id="g2a1" name="g2" value="A">
+        <label for="g2a1">A) A interação entre países</label><br>
+        <input type="radio" id="g2a2" name="g2" value="B">
+        <label for="g2a2">B) A divisão do mundo em blocos</label><br>
+        <input type="radio" id="g2a3" name="g2" value="C">
+        <label for="g2a3">C) A formação de zonas rurais</label><br>
+        <span class="feedback" id="feedback2"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>3. Qual é o principal gás responsável pelo efeito estufa?</p>
+        <input type="radio" id="g3a1" name="g3" value="A">
+        <label for="g3a1">A) Dióxido de carbono (CO2)</label><br>
+        <input type="radio" id="g3a2" name="g3" value="B">
+        <label for="g3a2">B) Oxigênio (O2)</label><br>
+        <input type="radio" id="g3a3" name="g3" value="C">
+        <label for="g3a3">C) Metano (CH4)</label><br>
+        <span class="feedback" id="feedback3"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>4. O que é um bioma?</p>
+        <input type="radio" id="g4a1" name="g4" value="A">
+        <label for="g4a1">A) Uma área com características climáticas e de vegetação semelhantes</label><br>
+        <input type="radio" id="g4a2" name="g4" value="B">
+        <label for="g4a2">B) Um tipo de solo</label><br>
+        <input type="radio" id="g4a3" name="g4" value="C">
+        <label for="g4a3">C) Um organismo vivo</label><br>
+        <span class="feedback" id="feedback4"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>5. Qual é o continente mais populoso do mundo?</p>
+        <input type="radio" id="g5a1" name="g5" value="A">
+        <label for="g5a1">A) Europa</label><br>
+        <input type="radio" id="g5a2" name="g5" value="B">
+        <label for="g5a2">B) Ásia</label><br>
+        <input type="radio" id="g5a3" name="g5" value="C">
+        <label for="g5a3">C) África</label><br>
+        <span class="feedback" id="feedback5"></span>
+    </div>
+
+    <div class="buttons">
+        <div class="button-left">
+            <button onclick="voltar()">Voltar</button>
+        </div>
+        <div class="button-right">
+            <button onclick="avancar()">Avançar</button>
+        </div>
+    </div>
+
+    <div class="centralizado">
+        <button id="verificarBtn" onclick="verificar()">Verificar Respostas</button>
+    </div>
+
+    <script>
+        function verificar() {
+            const respostasCorretas = ['B', 'A', 'A', 'A', 'B'];
+
+            for (let i = 1; i <= 5; i++) {
+                const respostaSelecionada = document.querySelector(`input[name="g${i}"]:checked`);
+                const feedbackElement = document.getElementById(`feedback${i}`);
+                if (respostaSelecionada && respostaSelecionada.value === respostasCorretas[i - 1]) {
+                    feedbackElement.innerHTML = '✅';
+                } else {
+                    feedbackElement.innerHTML = '❌';
+                }
+            }
+        }
+
+        function voltar() {
+            window.history.back();
+        }
+
+        function avancar() {
+            alert("Avançar para a próxima página!");
+        }
+    </script>
+</body>
+</html>

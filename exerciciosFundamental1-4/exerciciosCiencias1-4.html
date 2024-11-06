@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/ensinomedio.css">
+    <title>Exercício de Ciências - Dissertativas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .pergunta {
+            margin: 20px 0;
+        }
+        input[type="text"] {
+            width: 300px;
+            text-align: center;
+        }
+        .feedback {
+            display: inline-block;
+            width: 30px;
+            margin-left: 10px;
+            font-size: 20px; /* Aumenta o tamanho do emoji */
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .button-left, .button-right {
+            margin: 20px;
+            text-align: center;
+        }
+        .centralizado {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#"><img src="/image/logo_educai.png" alt="Logo Educaí" class="logo me-2"></a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="btn-custom" href="/cursos.html">Home</a>
+    </nav>
+    <h1>Exercício de Ciências</h1>
+    <p>Responda às perguntas abaixo com uma palavra ou uma frase curta:</p>
+
+    <div class="pergunta">
+        <p>1. O que é fotossíntese? <input type="text" id="resposta1"> <span class="feedback" id="feedback1"></span></p>
+    </div>
+
+    <div class="pergunta">
+        <p>2. Quais são os estados físicos da água? <input type="text" id="resposta2"> <span class="feedback" id="feedback2"></span></p>
+    </div>
+
+    <div class="pergunta">
+        <p>3. O que os animais precisam para sobreviver? <input type="text" id="resposta3"> <span class="feedback" id="feedback3"></span></p>
+    </div>
+
+    <div class="pergunta">
+        <p>4. Qual é a importância da reciclagem? <input type="text" id="resposta4"> <span class="feedback" id="feedback4"></span></p>
+    </div>
+
+    <div class="pergunta">
+        <p>5. Cite um exemplo de cadeia alimentar. <input type="text" id="resposta5"> <span class="feedback" id="feedback5"></span></p>
+    </div>
+
+    <div class="buttons">
+        <div class="button-left">
+            <button onclick="voltar()">Voltar</button>
+        </div>
+        <div class="button-right">
+            <button onclick="avancar()">Avançar</button>
+        </div>
+    </div>
+
+    <div class="centralizado">
+        <button onclick="verificar()">Verificar Respostas</button>
+    </div>
+
+    <script>
+        function verificar() {
+            const respostasCorretas = [
+                "É o processo pelo qual as plantas produzem alimento usando luz solar.",
+                "Sólido, líquido e gasoso.",
+                "Água, alimento e oxigênio.",
+                "Ajuda a conservar o meio ambiente e reduz a poluição.",
+                "Planta → Coelho → Raposa."
+            ];
+
+            for (let i = 1; i <= 5; i++) {
+                const resposta = document.getElementById(`resposta${i}`).value.toLowerCase().trim();
+                const respostaCorreta = respostasCorretas[i - 1].toLowerCase();
+
+                const feedbackElement = document.getElementById(`feedback${i}`);
+                if (resposta === respostaCorreta) {
+                    feedbackElement.innerHTML = '✅'; // Emoji de correta ao lado do input
+                } else {
+                    feedbackElement.innerHTML = '❌'; // Emoji de errada ao lado do input
+                }
+            }
+        }
+
+        function voltar() {
+            window.history.back(); // Volta para a página anterior
+        }
+
+        function avancar() {
+            alert("Avançar para a próxima página!"); // Você pode redirecionar aqui
+            // window.location.href = 'proxima_pagina.html'; // Exemplo de redirecionamento
+        }
+
+        // Permite navegar pelos campos com Enter
+        document.addEventListener("DOMContentLoaded", () => {
+            const inputs = document.querySelectorAll("input[type='text']");
+            inputs.forEach((input, index) => {
+                input.addEventListener("keydown", (event) => {
+                    if (event.key === "Enter") {
+                        event.preventDefault();
+                        if (index < inputs.length - 1) {
+                            inputs[index + 1].focus(); // Vai para o próximo input
+                        } else {
+                            verificar(); // Se estiver no último input, verifica as respostas
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/ensinomedio.css">
+    <title>Identifique as Imagens</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #dda0dd;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .image-container {
+            margin-bottom: 30px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        input {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 15px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        input:focus {
+            border-color: #0056b3;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #cb6ce6;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            color: black;
+
+        }
+        .feedback {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            display: none;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#"><img src="/image/logo_educai.png" alt="Logo Educaí" class="logo me-2"></a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="btn-custom" href="/cursos.html">Home</a>
+    </nav>
+
+    <div class="container">
+        <h1>Identifique o que está sendo mostrado nas imagens</h1>
+
+        <div class="image-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBiYc4LMoEkl_QbqB73-83ldFm7wOzdri7LQ&s" alt="Imagem 1">
+            <input type="text" id="input1" placeholder="Descreva a imagem...">
+            <div id="feedback1" class="feedback"></div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS71RQIoCOuSWZwYkIL8Un6I4mKpkS8S9dMQ&s" alt="Imagem 2">
+            <input type="text" id="input2" placeholder="Descreva a imagem...">
+            <div id="feedback2" class="feedback"></div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTci6EQwg-5KK3m2xGdDjJGrVSLZM2lcnZBNw&s" alt="Imagem 3">
+            <input type="text" id="input3" placeholder="Descreva a imagem...">
+            <div id="feedback3" class="feedback"></div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs2dmMrapJ6aWfxrg_TMLZC2DwD7X4Ae60wg&s" alt="Imagem 4">
+            <input type="text" id="input4" placeholder="Descreva a imagem...">
+            <div id="feedback4" class="feedback"></div>
+        </div>
+        <button onclick="window.location.href='explicacaoCiencias.html'">Voltar</button>
+        <button onclick="checkAnswers()">Verificar Respostas</button>
+        
+        
+    </div>
+
+    <script>
+        const correctDescriptions = ['coração', 'cérebro', 'pé', 'mão']; // Respostas corretas
+
+        function checkAnswers() {
+            for (let i = 1; i <= 4; i++) {
+                const userInput = document.getElementById(`input${i}`).value.toLowerCase();
+                const feedback = document.getElementById(`feedback${i}`);
+
+                if (userInput === correctDescriptions[i - 1]) {
+                    feedback.textContent = 'Correto!';
+                    feedback.className = 'feedback correct';
+                    feedback.style.display = 'inline-block';
+                } else {
+                    feedback.textContent = 'Incorreto. Tente novamente.';
+                    feedback.className = 'feedback incorrect';
+                    feedback.style.display = 'inline-block';
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

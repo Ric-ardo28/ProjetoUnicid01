@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/ensinomedio.css"> 
+    <title>Exercício de Sociologia - 3º Ano do Ensino Médio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .pergunta {
+            margin: 30px 0;
+            text-align: left;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .feedback {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .centralizado {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#"><img src="/image/logo_educai.png" alt="Logo Educaí" class="logo me-2"></a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="btn-custom" href="/cursos.html">Home</a>
+    </nav>
+    <h1>Exercício de Sociologia - 3º Ano do Ensino Médio</h1>
+    <p>Escolha a alternativa correta:</p>
+
+    <div class="pergunta">
+        <p>1. O que é sociedade?</p>
+        <input type="radio" id="s1a1" name="s1" value="A">
+        <label for="s1a1">A) Um conjunto de indivíduos que vivem em interação</label><br>
+        <input type="radio" id="s1a2" name="s1" value="B">
+        <label for="s1a2">B) Um grupo de pessoas que se isolam do mundo</label><br>
+        <input type="radio" id="s1a3" name="s1" value="C">
+        <label for="s1a3">C) Uma organização não governamental</label><br>
+        <span class="feedback" id="feedback1"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>2. O que é cultura?</p>
+        <input type="radio" id="s2a1" name="s2" value="A">
+        <label for="s2a1">A) O conjunto de costumes e práticas de um grupo</label><br>
+        <input type="radio" id="s2a2" name="s2" value="B">
+        <label for="s2a2">B) Apenas a arte e a música de uma sociedade</label><br>
+        <input type="radio" id="s2a3" name="s2" value="C">
+        <label for="s2a3">C) O sistema político de um país</label><br>
+        <span class="feedback" id="feedback2"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>3. O que é estratificação social?</p>
+        <input type="radio" id="s3a1" name="s3" value="A">
+        <label for="s3a1">A) A divisão da sociedade em camadas hierárquicas</label><br>
+        <input type="radio" id="s3a2" name="s3" value="B">
+        <label for="s3a2">B) A mistura de culturas diferentes</label><br>
+        <input type="radio" id="s3a3" name="s3" value="C">
+        <label for="s3a3">C) O estudo de grupos minoritários</label><br>
+        <span class="feedback" id="feedback3"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>4. O que é globalização?</p>
+        <input type="radio" id="s4a1" name="s4" value="A">
+        <label for="s4a1">A) A interconexão entre países e culturas ao redor do mundo</label><br>
+        <input type="radio" id="s4a2" name="s4" value="B">
+        <label for="s4a2">B) A separação entre culturas e tradições</label><br>
+        <input type="radio" id="s4a3" name="s4" value="C">
+        <label for="s4a3">C) A redução da população mundial</label><br>
+        <span class="feedback" id="feedback4"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>5. O que é uma instituição social?</p>
+        <input type="radio" id="s5a1" name="s5" value="A">
+        <label for="s5a1">A) Um sistema que organiza comportamentos e relações sociais</label><br>
+        <input type="radio" id="s5a2" name="s5" value="B">
+        <label for="s5a2">B) Uma empresa privada</label><br>
+        <input type="radio" id="s5a3" name="s5" value="C">
+        <label for="s5a3">C) Um grupo de amigos</label><br>
+        <span class="feedback" id="feedback5"></span>
+    </div>
+
+    <div class="buttons">
+        <div class="button-left">
+            <button onclick="voltar()">Voltar</button>
+        </div>
+        <div class="button-right">
+            <button onclick="avancar()">Avançar</button>
+        </div>
+    </div>
+
+    <div class="centralizado">
+        <button id="verificarBtn" onclick="verificar()">Verificar Respostas</button>
+    </div>
+
+    <script>
+        function verificar() {
+            const respostasCorretas = ['A', 'A', 'A', 'A', 'A'];
+
+            for (let i = 1; i <= 5; i++) {
+                const respostaSelecionada = document.querySelector(`input[name="s${i}"]:checked`);
+                const feedbackElement = document.getElementById(`feedback${i}`);
+                if (respostaSelecionada && respostaSelecionada.value === respostasCorretas[i - 1]) {
+                    feedbackElement.innerHTML = '✅';
+                } else {
+                    feedbackElement.innerHTML = '❌';
+                }
+            }
+        }
+
+        function voltar() {
+            window.history.back();
+        }
+
+        function avancar() {
+            alert("Avançar para a próxima página!");
+        }
+    </script>
+</body>
+</html>

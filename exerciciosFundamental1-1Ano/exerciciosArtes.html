@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/ensinomedio.css"> 
+    <title>Exercícios de Artes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #dda0dd;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 10px;
+            margin-top: 20px;
+        }
+        .question {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza as alternativas */
+            margin-top: 10px; /* Espaçamento acima das opções */
+        }
+        label {
+            margin: 5px 0; /* Espaçamento entre as opções */
+        }
+    </style>
+</head>
+<body>
+    <nav class="container d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#"><img src="/image/logo_educai.png" alt="Logo Educaí" class="logo me-2"></a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="btn-custom" href="/cursos.html">Home</a>
+    </nav>
+
+    <div class="container">
+        <h2>Exercícios de Artes</h2>
+        <p>Escolha a resposta correta para cada pergunta sobre Artes!</p>
+
+        <div class="grid">
+            <div class="question">
+                1. O que você usa para pintar?
+                <div class="options">
+                    <label><input type="radio" name="answer1" value="tinta"> Tinta</label>
+                    <label><input type="radio" name="answer1" value="pincel"> Pincel</label>
+                    <label><input type="radio" name="answer1" value="papel"> Papel</label>
+                    <label><input type="radio" name="answer1" value="caneta"> Caneta</label>
+                </div>
+                <span class="icon" id="feedback1"></span>
+            </div>
+
+            <div class="question">
+                2. Como você se chama quando se movimenta ao som da música?
+                <div class="options">
+                    <label><input type="radio" name="answer2" value="dança"> Dança</label>
+                    <label><input type="radio" name="answer2" value="cantar"> Cantar</label>
+                    <label><input type="radio" name="answer2" value="falar"> Falar</label>
+                    <label><input type="radio" name="answer2" value="pintar"> Pintar</label>
+                </div>
+                <span class="icon" id="feedback2"></span>
+            </div>
+
+            <div class="question">
+                3. Que instrumento você pode tocar para fazer música?
+                <div class="options">
+                    <label><input type="radio" name="answer3" value="violão"> Violão</label>
+                    <label><input type="radio" name="answer3" value="bateria"> Bateria</label>
+                    <label><input type="radio" name="answer3" value="flauta"> Flauta</label>
+                    <label><input type="radio" name="answer3" value="trompete"> Trompete</label>
+                </div>
+                <span class="icon" id="feedback3"></span>
+            </div>
+
+            <div class="question">
+                4. O que é feito com argila ou madeira e pode ser tocado?
+                <div class="options">
+                    <label><input type="radio" name="answer4" value="escultura"> Escultura</label>
+                    <label><input type="radio" name="answer4" value="pintura"> Pintura</label>
+                    <label><input type="radio" name="answer4" value="desenho"> Desenho</label>
+                    <label><input type="radio" name="answer4" value="fotografia"> Fotografia</label>
+                </div>
+                <span class="icon" id="feedback4"></span>
+            </div>
+
+            <div class="question">
+                5. O que é uma arte que você pode ver em museus e galerias?
+                <div class="options">
+                    <label><input type="radio" name="answer5" value="pintura"> Pintura</label>
+                    <label><input type="radio" name="answer5" value="escultura"> Escultura</label>
+                    <label><input type="radio" name="answer5" value="arte digital"> Arte Digital</label>
+                    <label><input type="radio" name="answer5" value="música"> Música</label>
+                </div>
+                <span class="icon" id="feedback5"></span>
+            </div>
+        </div>
+
+        <button onclick="checkAnswers()">Verificar Respostas</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const correctAnswers = [
+                'tinta', // Resposta para a pergunta 1
+                'dança', // Resposta para a pergunta 2
+                'violão', // Resposta para a pergunta 3
+                'escultura', // Resposta para a pergunta 4
+                'pintura' // Resposta para a pergunta 5
+            ];
+
+            const feedbackIcons = document.querySelectorAll('.icon');
+            feedbackIcons.forEach((icon, index) => {
+                const options = document.getElementsByName(`answer${index + 1}`);
+                let selectedValue = null;
+
+                // Verifica qual opção foi selecionada
+                for (let option of options) {
+                    if (option.checked) {
+                        selectedValue = option.value;
+                        break;
+                    }
+                }
+
+                if (selectedValue === correctAnswers[index]) {
+                    icon.textContent = ' ✔'; // Ícone de correto
+                    icon.style.color = 'green'; // Verde para correto
+                } else {
+                    icon.textContent = ' ✘'; // Ícone de incorreto
+                    icon.style.color = 'red'; // Vermelho para incorreto
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

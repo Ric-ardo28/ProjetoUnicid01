@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/ensinomedio.css"> 
+    <title>Simulado de Conhecimentos Gerais</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#"><img src="/image/logo_educai.png" alt="Logo Educaí" class="logo me-2"></a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="btn-custom" href="/cursos.html">Home</a>
+    </nav>
+
+    <h1>Simulado de Conhecimentos Gerais</h1>
+    <form id="quizForm">
+        <div id="questionsContainer">
+            <!-- As questões serão inseridas aqui pelo JavaScript -->
+        </div>
+        <div class="navigation">
+            <button type="button" id="prevBtn" onclick="changePage(-1)">Voltar</button>
+            <button type="button" id="nextBtn" onclick="changePage(1)">Próximo</button>
+        </div>
+    </form>
+
+    <script>
+        const questions = [
+            { question: "Qual é a capital do Brasil?", options: ["Brasília", "Rio de Janeiro", "São Paulo", "Salvador"], answer: 0 },
+            { question: "Qual é o maior planeta do sistema solar?", options: ["Terra", "Marte", "Júpiter", "Saturno"], answer: 2 },
+            { question: "Quem escreveu 'Dom Casmurro'?", options: ["Machado de Assis", "José de Alencar", "Joaquim Manuel de Macedo", "Aluísio Azevedo"], answer: 0 },
+            { question: "Qual é a fórmula química da água?", options: ["CO2", "H2O", "O2", "H2"], answer: 1 },
+            { question: "Qual é a montanha mais alta do mundo?", options: ["K2", "Monte Everest", "Kilimanjaro", "Mont Blanc"], answer: 1 },
+            { question: "Qual é o idioma mais falado no mundo?", options: ["Inglês", "Mandarim", "Espanhol", "Árabe"], answer: 1 },
+            { question: "Em que ano o homem pisou na Lua?", options: ["1965", "1969", "1972", "1980"], answer: 1 },
+            { question: "Qual é o elemento químico representado pela letra 'O'?", options: ["Ouro", "Oxigênio", "Ósmio", "Oxônio"], answer: 1 },
+            { question: "Quem pintou a Mona Lisa?", options: ["Van Gogh", "Picasso", "Da Vinci", "Michelangelo"], answer: 2 },
+            { question: "Qual é a capital da França?", options: ["Madri", "Paris", "Berlim", "Londres"], answer: 1 },
+            { question: "Qual país é conhecido como a Terra do Sol Nascente?", options: ["China", "Coreia do Sul", "Japão", "Tailândia"], answer: 2 },
+            { question: "Qual é o maior oceano do mundo?", options: ["Oceano Atlântico", "Oceano Índico", "Oceano Ártico", "Oceano Pacífico"], answer: 3 },
+            { question: "Quem foi o primeiro presidente dos Estados Unidos?", options: ["Abraham Lincoln", "George Washington", "Thomas Jefferson", "John Adams"], answer: 1 },
+            { question: "Qual é o rio mais longo do mundo?", options: ["Rio Nilo", "Rio Amazonas", "Rio Yangtze", "Rio Mississippi"], answer: 0 },
+            { question: "Qual é a capital da Argentina?", options: ["Santiago", "Buenos Aires", "Montevidéu", "Lima"], answer: 1 },
+            { question: "Em que continente está localizado o Egito?", options: ["África", "Ásia", "Europa", "América"], answer: 0 },
+            { question: "Qual é o maior mamífero do mundo?", options: ["Elefante", "Baleia Azul", "Girafa", "Urso Polar"], answer: 1 },
+            { question: "Quem descobriu o Brasil?", options: ["Pedro Álvares Cabral", "Cristóvão Colombo", "Vasco da Gama", "Fernão de Magalhães"], answer: 0 },
+            { question: "Qual é o símbolo químico do carbono?", options: ["C", "Ca", "Co", "Cr"], answer: 0 },
+            { question: "Qual é a capital do Japão?", options: ["Seul", "Tóquio", "Pequim", "Bangcoc"], answer: 1 },
+            { question: "Qual é a maior floresta tropical do mundo?", options: ["Floresta Amazônica", "Floresta do Congo", "Floresta Boreal", "Floresta de Taiga"], answer: 0 },
+            { question: "Qual é a moeda oficial da União Europeia?", options: ["Dólar", "Euro", "Libra", "Franco"], answer: 1 },
+            { question: "Qual é a língua oficial do Brasil?", options: ["Espanhol", "Inglês", "Francês", "Português"], answer: 3 },
+            { question: "Qual é o maior deserto do mundo?", options: ["Deserto do Saara", "Deserto de Gobi", "Deserto de Atacama", "Deserto da Antártica"], answer: 3 },
+            { question: "Quem foi o líder sul-africano que lutou contra o apartheid?", options: ["Nelson Mandela", "Desmond Tutu", "F.W. de Klerk", "Thabo Mbeki"], answer: 0 },
+            { question: "Qual é o país mais populoso do mundo?", options: ["Índia", "Estados Unidos", "China", "Indonésia"], answer: 2 },
+            { question: "Qual é a capital da Itália?", options: ["Milão", "Veneza", "Roma", "Nápoles"], answer: 2 },
+            { question: "Qual é a principal religião da Índia?", options: ["Cristianismo", "Islamismo", "Hinduísmo", "Budismo"], answer: 2 },
+            { question: "Qual é o animal terrestre mais rápido do mundo?", options: ["Leopardo", "Guepardo", "Cavalo", "Elefante"], answer: 1 },
+            { question: "Qual é a capital da Austrália?", options: ["Sydney", "Melbourne", "Canberra", "Brisbane"], answer: 2 },
+            { question: "Qual é o país conhecido como 'Terra dos Faraós'?", options: ["Grécia", "Egito", "Índia", "México"], answer: 1 },
+            { question: "Quem é conhecido como o pai da física moderna?", options: ["Isaac Newton", "Galileu Galilei", "Albert Einstein", "Nikola Tesla"], answer: 2 },
+            { question: "Qual é o mais profundo oceano do mundo?", options: ["Oceano Atlântico", "Oceano Índico", "Oceano Pacífico", "Oceano Ártico"], answer: 2 },
+            { question: "Qual é a capital da Rússia?", options: ["São Petersburgo", "Moscovo", "Novosibirsk", "Kazan"], answer: 1 },
+            { question: "Quem foi o famoso líder revolucionário cubano?", options: ["Che Guevara", "Fidel Castro", "Raúl Castro", "José Martí"], answer: 1 },
+            { question: "Qual é o continente conhecido como 'Terra do Fogo'?", options: ["África", "América do Sul", "Oceania", "Antártica"], answer: 1 },
+            { question: "Qual é a capital da Alemanha?", options: ["Berlim", "Munique", "Frankfurt", "Hamburgo"], answer: 0 },
+            { question: "Qual é a maior ilha do mundo?", options: ["Grã-Bretanha", "Groelândia", "Nova Guiné", "Borneu"], answer: 1 },
+            { question: "Qual é a cor da bandeira da Itália?", options: ["Vermelho, branco e verde", "Vermelho, azul e branco", "Verde, amarelo e azul", "Azul, branco e vermelho"], answer: 0 },
+            { question: "Qual é o país conhecido como 'Terra dos Incas'?", options: ["Bolívia", "Peru", "Chile", "Colômbia"], answer: 1 },
+            { question: "Qual é a capital do Canadá?", options: ["Toronto", "Ottawa", "Vancouver", "Montreal"], answer: 1 },
+            { question: "Qual é o símbolo químico do ferro?", options: ["Fe", "F", "Ir", "Pb"], answer: 0 },
+            { question: "Qual é a capital da Nova Zelândia?", options: ["Auckland", "Wellington", "Christchurch", "Hamilton"], answer: 1 },
+            { question: "Qual é o menor planeta do sistema solar?", options: ["Mercúrio", "Vênus", "Marte", "Plutão"], answer: 0 },
+            { question: "Qual é o principal ingrediente do guacamole?", options: ["Tomate", "Cebola", "Abacate", "Pimentão"], answer: 2 },
+            { question: "Quem escreveu 'A Divina Comédia'?", options: ["Virgílio", "Dante Alighieri", "T.S. Eliot", "Homero"], answer: 1 },
+            { question: "Qual é a capital da Espanha?", options: ["Barcelona", "Madrid", "Valência", "Sevilha"], answer: 1 },
+            { question: "Qual é o nome do famoso quadro de Edvard Munch?", options: ["A Noite Estrelada", "O Grito", "A Última Ceia", "Guernica"], answer: 1 },
+            { question: "Qual é o continente mais populoso do mundo?", options: ["África", "América", "Ásia", "Europa"], answer: 2 },
+            { question: "Qual é a principal fonte de energia da Terra?", options: ["Carvão", "Petróleo", "Solar", "Nuclear"], answer: 2 },
+            { question: "Qual é a capital do Egito?", options: ["Cairo", "Alexandria", "Lúxor", "Giza"], answer: 0 },
+            { question: "Qual é a fórmula da glicose?", options: ["C6H12O6", "C12H22O11", "C6H6", "C3H6O"], answer: 0 },
+            { question: "Qual é o país com a maior biodiversidade do mundo?", options: ["Brasil", "Colômbia", "Indonésia", "México"], answer: 0 },
+            { question: "Qual é o maior sistema de montanhas do mundo?", options: ["Andes", "Himalaia", "Rochedos", "Apalaches"], answer: 1 },
+            { question: "Quem foi a primeira mulher a ganhar um Prêmio Nobel?", options: ["Marie Curie", "Rosalind Franklin", "Ada Lovelace", "Jane Goodall"], answer: 0 },
+            { question: "Qual é o país conhecido como 'Terra dos Gales'?", options: ["Escócia", "Irlanda", "País de Gales", "Inglaterra"], answer: 2 },
+            { question: "Qual é o maior lago do mundo?", options: ["Lago Superior", "Lago Vitória", "Mar Cáspio", "Lago Baikal"], answer: 2 },
+            { question: "Qual é o metal mais leve?", options: ["Alumínio", "Lítio", "Sódio", "Magnésio"], answer: 1 },
+            { question: "Quem foi o primeiro homem a voar?", options: ["Wright Brothers", "Lindbergh", "Gagarin", "Ames"], answer: 0 },
+            { question: "Qual é a capital da Grécia?", options: ["Atenas", "Tessalônica", "Patras", "Heraclião"], answer: 0 },
+        ];
+
+        
+
+        let currentPage = 0;
+        const questionsPerPage = 5;
+
+        function loadQuestions() {
+            const questionsContainer = document.getElementById('questionsContainer');
+            questionsContainer.innerHTML = '';
+
+            const start = currentPage * questionsPerPage;
+            const end = start + questionsPerPage;
+            const paginatedQuestions = questions.slice(start, end);
+
+            paginatedQuestions.forEach((q, index) => {
+                const questionElement = document.createElement('div');
+                questionElement.classList.add('question');
+                questionElement.innerHTML = `
+                    <p>${start + index + 1}. ${q.question}</p>
+                    <label><input type="radio" name="question${start + index}" value="0"> ${q.options[0]}</label><br>
+                    <label><input type="radio" name="question${start + index}" value="1"> ${q.options[1]}</label><br>
+                    <label><input type="radio" name="question${start + index}" value="2"> ${q.options[2]}</label><br>
+                    <label><input type="radio" name="question${start + index}" value="3"> ${q.options[3]}</label>
+                `;
+                questionsContainer.appendChild(questionElement);
+            });
+        }
+
+        function changePage(direction) {
+            const totalPages = Math.ceil(questions.length / questionsPerPage);
+            currentPage += direction;
+
+            // Limitar a navegação
+            if (currentPage < 0) {
+                currentPage = 0;
+            } else if (currentPage >= totalPages) {
+                currentPage = totalPages - 1;
+            }
+
+            loadQuestions();
+        }
+
+        // Inicializa o quiz carregando a primeira página de perguntas
+        loadQuestions();
+    </script>
+    <div class="botoes-esquerda">
+        <a class="btn-custom" href="simuladoGabarito.html">Gabarito Simulado</a></div>
+    
+</body>
+</html>

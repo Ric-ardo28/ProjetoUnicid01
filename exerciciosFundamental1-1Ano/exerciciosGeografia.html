@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/ensinomedio.css"> 
+    <title>Exercícios de Geografia - Meios de Transporte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #dda0dd;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .exercise {
+            margin-bottom: 20px;
+            font-size: 18px;
+            text-align: left;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .feedback {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            display: none;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#"><img src="/image/logo_educai.png" alt="Logo Educaí" class="logo me-2"></a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="btn-custom" href="/cursos.html">Home</a>
+    </nav>
+
+    <div class="container">
+        <h1>Exercícios de Geografia - Meios de Transporte</h1>
+
+        <div class="exercise">
+            <p>1. Qual é o meio de transporte que voa pelo ar?</p>
+            <label><input type="radio" name="q1" value="a"> Barco</label><br>
+            <label><input type="radio" name="q1" value="b"> Avião</label><br>
+            <label><input type="radio" name="q1" value="c"> Carro</label><br>
+            <div id="feedback1" class="feedback"></div>
+        </div>
+
+        <div class="exercise">
+            <p>2. Qual é o meio de transporte que se move sobre trilhos?</p>
+            <label><input type="radio" name="q2" value="a"> Trem</label><br>
+            <label><input type="radio" name="q2" value="b"> Foguete</label><br>
+            <label><input type="radio" name="q2" value="c"> Moto</label><br>
+            <div id="feedback2" class="feedback"></div>
+        </div>
+
+        <div class="exercise">
+            <p>3. Qual é o meio de transporte que flutua na água?</p>
+            <label><input type="radio" name="q3" value="a"> Barco</label><br>
+            <label><input type="radio" name="q3" value="b"> Ônibus</label><br>
+            <label><input type="radio" name="q3" value="c"> Carro</label><br>
+            <div id="feedback3" class="feedback"></div>
+        </div>
+
+        <div class="exercise">
+            <p>4. Qual é o meio de transporte que você usa para ir à escola?</p>
+            <label><input type="radio" name="q4" value="a"> Bicicleta</label><br>
+            <label><input type="radio" name="q4" value="b"> Ônibus</label><br>
+            <label><input type="radio" name="q4" value="c"> Avião</label><br>
+            <div id="feedback4" class="feedback"></div>
+        </div>
+
+        <div class="exercise">
+            <p>5. Qual é o meio de transporte que você vê nas ruas e que tem quatro rodas?</p>
+            <label><input type="radio" name="q5" value="a"> Carro</label><br>
+            <label><input type="radio" name="q5" value="b"> Trem</label><br>
+            <label><input type="radio" name="q5" value="c"> Navio</label><br>
+            <div id="feedback5" class="feedback"></div>
+        </div>
+
+        <button onclick="checkAnswers()">Verificar Respostas</button>
+    </div>
+
+    <script>
+        const correctAnswers = ['b', 'a', 'a', 'b', 'a']; // Respostas corretas
+
+        function checkAnswers() {
+            for (let i = 1; i <= 5; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const feedback = document.getElementById(`feedback${i}`);
+
+                if (selected) {
+                    if (selected.value === correctAnswers[i - 1]) {
+                        feedback.textContent = 'Correto!';
+                        feedback.className = 'feedback correct';
+                    } else {
+                        feedback.textContent = 'Incorreto. Tente novamente.';
+                        feedback.className = 'feedback incorrect';
+                    }
+                    feedback.style.display = 'inline-block';
+                } else {
+                    feedback.textContent = 'Por favor, selecione uma resposta.';
+                    feedback.className = 'feedback incorrect';
+                    feedback.style.display = 'inline-block';
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

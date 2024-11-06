@@ -15,7 +15,7 @@
             </a>
             <span class="h4 mb-0 fw-bold">Educaí</span>
         </div>
-        <a class="custom-btn" href="index.html">Home</a>
+        <a class="custom-btn" href="/cursos.html">Home</a>
     </nav>
     <h1>Exercício: Separe as Sílabas</h1>
     <h2>Complete as sílabas das palavras:</h2>
@@ -35,18 +35,16 @@
         <p>13. RELÓGIO - <input type="text" id="input13-1" class="input" onkeypress="navigate(event, 'input13-2')"><input type="text" id="input13-2" class="input" onkeypress="navigate(event, 'input13-3')"><input type="text" id="input13-3" class="input"><span id="icon13" class="feedback-icon"></span></p>
         </div>
         <div class="buttons">
-            <button class="custom-btn" onclick="goBack()">Voltar</button>
+            <button onclick="window.location.href='explicacaoPortugues.html'">Voltar</button>
             <button class="custom-btn" id="verifyButton" onclick="checkSyllables()">Verificar</button>
-            <button class="custom-btn" onclick="goForward()">Avançar</button>
+            
         </div>
         <script>
              function goBack() {
-            alert("Função de voltar implementada!");
+                <button onclick="window.location.href='explicacaoPortugues.html'">Voltar</button>
         }
 
-        function goForward() {
-            alert("Função de avançar implementada!");
-        }
+       
 
         function navigate(event, nextInputId) {
             if (event.key === "Enter") {

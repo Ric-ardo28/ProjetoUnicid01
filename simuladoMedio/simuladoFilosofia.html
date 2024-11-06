@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/ensinomedio.css"> 
+    <title>Exercício de Filosofia - 3º Ano do Ensino Médio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .pergunta {
+            margin: 30px 0;
+            text-align: left;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .feedback {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .centralizado {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#"><img src="/image/logo_educai.png" alt="Logo Educaí" class="logo me-2"></a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="btn-custom" href="/cursos.html">Home</a>
+    </nav>
+    <h1>Exercício de Filosofia - 3º Ano do Ensino Médio</h1>
+    <p>Escolha a alternativa correta:</p>
+
+    <div class="pergunta">
+        <p>1. O que é ética?</p>
+        <input type="radio" id="p1a1" name="p1" value="A">
+        <label for="p1a1">A) O estudo da moral e dos valores</label><br>
+        <input type="radio" id="p1a2" name="p1" value="B">
+        <label for="p1a2">B) O estudo da lógica e da razão</label><br>
+        <input type="radio" id="p1a3" name="p1" value="C">
+        <label for="p1a3">C) O estudo da história da filosofia</label><br>
+        <span class="feedback" id="feedback1"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>2. Quem é considerado o pai da filosofia ocidental?</p>
+        <input type="radio" id="p2a1" name="p2" value="A">
+        <label for="p2a1">A) Aristóteles</label><br>
+        <input type="radio" id="p2a2" name="p2" value="B">
+        <label for="p2a2">B) Platão</label><br>
+        <input type="radio" id="p2a3" name="p2" value="C">
+        <label for="p2a3">C) Sócrates</label><br>
+        <span class="feedback" id="feedback2"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>3. O que é o niilismo?</p>
+        <input type="radio" id="p3a1" name="p3" value="A">
+        <label for="p3a1">A) A crença na inexistência de valores e significado</label><br>
+        <input type="radio" id="p3a2" name="p3" value="B">
+        <label for="p3a2">B) A crença na importância da razão</label><br>
+        <input type="radio" id="p3a3" name="p3" value="C">
+        <label for="p3a3">C) A crença na superioridade da moral cristã</label><br>
+        <span class="feedback" id="feedback3"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>4. O que é o racionalismo?</p>
+        <input type="radio" id="p4a1" name="p4" value="A">
+        <label for="p4a1">A) A crença de que a razão é a principal fonte do conhecimento</label><br>
+        <input type="radio" id="p4a2" name="p4" value="B">
+        <label for="p4a2">B) A crença de que a experiência é a principal fonte do conhecimento</label><br>
+        <input type="radio" id="p4a3" name="p4" value="C">
+        <label for="p4a3">C) A crença de que os sentimentos são a principal fonte do conhecimento</label><br>
+        <span class="feedback" id="feedback4"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>5. O que é a dialética?</p>
+        <input type="radio" id="p5a1" name="p5" value="A">
+        <label for="p5a1">A) Um método de argumentação e diálogo</label><br>
+        <input type="radio" id="p5a2" name="p5" value="B">
+        <label for="p5a2">B) Uma técnica de meditação</label><br>
+        <input type="radio" id="p5a3" name="p5" value="C">
+        <label for="p5a3">C) Um tipo de filosofia oriental</label><br>
+        <span class="feedback" id="feedback5"></span>
+    </div>
+
+    <div class="buttons">
+        <div class="button-left">
+            <button onclick="voltar()">Voltar</button>
+        </div>
+        <div class="button-right">
+            <button onclick="avancar()">Avançar</button>
+        </div>
+    </div>
+
+    <div class="centralizado">
+        <button id="verificarBtn" onclick="verificar()">Verificar Respostas</button>
+    </div>
+
+    <script>
+        function verificar() {
+            const respostasCorretas = ['A', 'C', 'A', 'A', 'A'];
+
+            for (let i = 1; i <= 5; i++) {
+                const respostaSelecionada = document.querySelector(`input[name="p${i}"]:checked`);
+                const feedbackElement = document.getElementById(`feedback${i}`);
+                if (respostaSelecionada && respostaSelecionada.value === respostasCorretas[i - 1]) {
+                    feedbackElement.innerHTML = '✅';
+                } else {
+                    feedbackElement.innerHTML = '❌';
+                }
+            }
+        }
+
+        function voltar() {
+            window.history.back();
+        }
+
+        function avancar() {
+            alert("Avançar para a próxima página!");
+        }
+    </script>
+</body>
+</html>

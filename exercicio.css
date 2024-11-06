@@ -3,6 +3,7 @@
     width: 50px;
     width: 40px;
     height: auto;
+    
 }
 .custom-btn:hover {
    color: black;
@@ -14,6 +15,7 @@
     border-radius: 20px; /* Ajuste o valor conforme desejado */
     padding: 8px 20px; /* Para melhor espaçamento */
     text-decoration: none;
+    float: right;
 }
 body {
     font-family: Arial, sans-serif;

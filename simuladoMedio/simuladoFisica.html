@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/ensinomedio.css"> 
+    <title>Exercício de Física - 3º Ano do Ensino Médio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .pergunta {
+            margin: 30px 0;
+            text-align: left;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .feedback {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .centralizado {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#"><img src="/image/logo_educai.png" alt="Logo Educaí" class="logo me-2"></a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="btn-custom" href="/cursos.html">Home</a>
+    </nav>
+    <h1>Exercício de Física - 3º Ano do Ensino Médio</h1>
+    <p>Escolha a alternativa correta:</p>
+
+    <div class="pergunta">
+        <p>1. O que é força?</p>
+        <input type="radio" id="f1a1" name="f1" value="A">
+        <label for="f1a1">A) Um vetor que representa a interação entre corpos</label><br>
+        <input type="radio" id="f1a2" name="f1" value="B">
+        <label for="f1a2">B) Uma quantidade escalar</label><br>
+        <input type="radio" id="f1a3" name="f1" value="C">
+        <label for="f1a3">C) Uma medida de temperatura</label><br>
+        <span class="feedback" id="feedback1"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>2. O que é trabalho na física?</p>
+        <input type="radio" id="f2a1" name="f2" value="A">
+        <label for="f2a1">A) A energia transferida por uma força que atua sobre um objeto</label><br>
+        <input type="radio" id="f2a2" name="f2" value="B">
+        <label for="f2a2">B) A quantidade de movimento de um corpo</label><br>
+        <input type="radio" id="f2a3" name="f2" value="C">
+        <label for="f2a3">C) A velocidade de um objeto em movimento</label><br>
+        <span class="feedback" id="feedback2"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>3. O que é energia cinética?</p>
+        <input type="radio" id="f3a1" name="f3" value="A">
+        <label for="f3a1">A) A energia que um corpo possui devido à sua posição</label><br>
+        <input type="radio" id="f3a2" name="f3" value="B">
+        <label for="f3a2">B) A energia que um corpo possui devido ao seu movimento</label><br>
+        <input type="radio" id="f3a3" name="f3" value="C">
+        <label for="f3a3">C) A energia armazenada em um sistema</label><br>
+        <span class="feedback" id="feedback3"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>4. O que é a lei da conservação da energia?</p>
+        <input type="radio" id="f4a1" name="f4" value="A">
+        <label for="f4a1">A) A energia total em um sistema isolado permanece constante</label><br>
+        <input type="radio" id="f4a2" name="f4" value="B">
+        <label for="f4a2">B) A energia pode ser criada do nada</label><br>
+        <input type="radio" id="f4a3" name="f4" value="C">
+        <label for="f4a3">C) A energia pode ser destruída</label><br>
+        <span class="feedback" id="feedback4"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>5. O que é a gravidade?</p>
+        <input type="radio" id="f5a1" name="f5" value="A">
+        <label for="f5a1">A) A força que atrai corpos para o centro da Terra</label><br>
+        <input type="radio" id="f5a2" name="f5" value="B">
+        <label for="f5a2">B) A força que mantém os planetas em órbita</label><br>
+        <input type="radio" id="f5a3" name="f5" value="C">
+        <label for="f5a3">C) A força que atua sobre todos os corpos em movimento</label><br>
+        <span class="feedback" id="feedback5"></span>
+    </div>
+
+    <div class="buttons">
+        <div class="button-left">
+            <button onclick="voltar()">Voltar</button>
+        </div>
+        <div class="button-right">
+            <button onclick="avancar()">Avançar</button>
+        </div>
+    </div>
+
+    <div class="centralizado">
+        <button id="verificarBtn" onclick="verificar()">Verificar Respostas</button>
+    </div>
+
+    <script>
+        function verificar() {
+            const respostasCorretas = ['A', 'A', 'B', 'A', 'A'];
+
+            for (let i = 1; i <= 5; i++) {
+                const respostaSelecionada = document.querySelector(`input[name="f${i}"]:checked`);
+                const feedbackElement = document.getElementById(`feedback${i}`);
+                if (respostaSelecionada && respostaSelecionada.value === respostasCorretas[i - 1]) {
+                    feedbackElement.innerHTML = '✅';
+                } else {
+                    feedbackElement.innerHTML = '❌';
+                }
+            }
+        }
+
+        function voltar() {
+            window.history.back();
+        }
+
+        function avancar() {
+            alert("Avançar para a próxima página!");
+        }
+    </script>
+</body>
+</html>

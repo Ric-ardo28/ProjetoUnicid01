@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/ensinomedio.css"> 
+    <title>Exercício de Artes - Dissertativas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .pergunta {
+            margin: 20px 0;
+            display: flex; /* Usar flexbox para alinhar itens */
+            justify-content: center; /* Centralizar os itens */
+            align-items: center; /* Alinhar verticalmente */
+        }
+        .feedback {
+            display: inline-block;
+            width: 30px;
+            margin-left: 10px;
+            font-size: 20px; /* Aumenta o tamanho do emoji */
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .button-left, .button-right {
+            margin: 20px;
+            text-align: center;
+        }
+        .centralizado {
+            margin: 20px 0;
+        }
+        textarea {
+            width: 200px; /* Diminui a largura do textarea */
+            resize: none; /* Impede o redimensionamento do textarea */
+            margin-left: 10px; /* Espaço entre a pergunta e o textarea */
+        }
+    </style>
+</head>
+<body>
+    <nav class="container d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#"><img src="/image/logo_educai.png" alt="Logo Educaí" class="logo me-2"></a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="btn-custom" href="/cursos.html">Home</a>
+    </nav>
+    <h1>Exercício de Artes</h1>
+    <p>Responda às perguntas abaixo:</p>
+
+    <div class="pergunta">
+        <p>1. Quais são os principais elementos da arte?</p>
+        <textarea id="resposta1" rows="1" onkeydown="navegar(event, 'resposta2')"></textarea>
+        <span class="feedback" id="feedback1"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>2. O que é arte abstrata?</p>
+        <textarea id="resposta2" rows="1" onkeydown="navegar(event, 'resposta3')"></textarea>
+        <span class="feedback" id="feedback2"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>3. Cite um estilo artístico famoso.</p>
+        <textarea id="resposta3" rows="1" onkeydown="navegar(event, 'resposta4')"></textarea>
+        <span class="feedback" id="feedback3"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>4. Como a luz influencia a pintura?</p>
+        <textarea id="resposta4" rows="1" onkeydown="navegar(event, 'resposta5')"></textarea>
+        <span class="feedback" id="feedback4"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>5. O que caracteriza a arte contemporânea?</p>
+        <textarea id="resposta5" rows="1" onkeydown="navegar(event, 'verificarBtn')"></textarea>
+        <span class="feedback" id="feedback5"></span>
+    </div>
+
+    <div class="buttons">
+        <div class="button-left">
+            <button onclick="voltar()">Voltar</button>
+        </div>
+        <div class="button-right">
+            <button onclick="avancar()">Avançar</button>
+        </div>
+    </div>
+
+    <div class="centralizado">
+        <button id="verificarBtn" onclick="verificar()">Verificar Respostas</button>
+    </div>
+
+    <script>
+        function verificar() {
+            const respostasCorretas = [
+                "linha, forma, cor, textura", // Principais elementos da arte
+                "arte que não representa objetos do mundo real", // O que é arte abstrata
+                "impressionismo", // Estilo artístico famoso
+                "cria sombras e destaques, impactando a percepção", // Luz na pintura
+                "reflete questões sociais, políticas e tecnológicas atuais" // Características da arte contemporânea
+            ];
+
+            for (let i = 1; i <= 5; i++) {
+                const resposta = document.getElementById(`resposta${i}`).value.toLowerCase();
+                const feedbackElement = document.getElementById(`feedback${i}`);
+                if (resposta.includes(respostasCorretas[i - 1])) {
+                    feedbackElement.innerHTML = '✅'; // Emoji de correta ao lado da pergunta
+                } else {
+                    feedbackElement.innerHTML = '❌'; // Emoji de errada ao lado da pergunta
+                }
+            }
+        }
+
+        function navegar(event, nextId) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Impede o comportamento padrão do Enter
+                document.getElementById(nextId).focus(); // Foca no próximo campo
+            }
+        }
+
+        function voltar() {
+            window.history.back(); // Volta para a página anterior
+        }
+
+        function avancar() {
+            alert("Avançar para a próxima página!"); // Você pode redirecionar aqui
+            // window.location.href = 'proxima_pagina.html'; // Exemplo de redirecionamento
+        }
+    </script>
+</body>
+</html>

@@ -20,10 +20,11 @@ body {
     border-radius: 20px;
     transition: background-color 0.3s ease;
     text-decoration: none;
+    float: right;
 }
 
 .btn-custom:hover {
-    background-color: #6a41c5;
+    color: black;
 }
 
 /* Menu de disciplinas */
@@ -51,6 +52,12 @@ header h1 {
 header p {
     font-size: 1.2rem;
 }
+.botoes-esquerda {
+    display: flex;        /* Usa Flexbox para alinhar os botões */
+    justify-content: left; /* Alinha os botões à esquerda */
+    gap: 10px;           /* Adiciona um espaço de 10px entre os botões */
+    margin: 50px;
+  }
 
 /* Responsividade */
 @media (max-width: 768px) {

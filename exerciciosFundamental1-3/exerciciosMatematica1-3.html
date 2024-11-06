@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/ensinomedio.css">
+    <title>Exercício de Matemática - Dissertativas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .pergunta {
+            margin: 20px 0;
+        }
+        input[type="text"] {
+            width: 300px;
+            text-align: center;
+        }
+        .feedback {
+            display: inline-block;
+            width: 30px;
+            margin-left: 10px;
+            font-size: 20px; 
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: 15;
+        }
+        .button-left, .button-right {
+            text-align: center;
+            margin: 15px;
+        }
+        .centralizado {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#"><img src="/image/logo_educai.png" alt="Logo Educaí" class="logo me-2"></a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="btn-custom" href="/cursos.html">Home</a>
+    </nav>
+    <h1>Exercício de Matemática</h1>
+    <p>Responda às perguntas abaixo com uma palavra ou uma frase curta:</p>
+
+    <div class="pergunta">
+        <p>1. Quanto é 5 mais 3? <input type="text" id="resposta1"> <span class="feedback" id="feedback1"></span></p>
+    </div>
+
+    <div class="pergunta">
+        <p>2. Se você tem 10 balas e come 4, quantas balas você ainda tem? <input type="text" id="resposta2"> <span class="feedback" id="feedback2"></span></p>
+    </div>
+
+    <div class="pergunta">
+        <p>3. Qual é o dobro de 6? <input type="text" id="resposta3"> <span class="feedback" id="feedback3"></span></p>
+    </div>
+
+    <div class="pergunta">
+        <p>4. Se uma maçã custa R$ 2, quanto custam 3 maçãs? <input type="text" id="resposta4"> <span class="feedback" id="feedback4"></span></p>
+    </div>
+
+    <div class="pergunta">
+        <p>5. O que é um número ímpar? Dê um exemplo. <input type="text" id="resposta5"> <span class="feedback" id="feedback5"></span></p>
+    </div>
+
+    <div class="buttons">
+        <div class="button-left">
+            <button onclick="voltar()">Voltar</button>
+        </div>
+        <div class="button-right">
+            <button onclick="avancar()">Avançar</button>
+        </div>
+    </div>
+
+    <div class="centralizado">
+        <button onclick="verificar()">Verificar Respostas</button>
+    </div>
+
+    <script>
+        function verificar() {
+            const respostasCorretas = [
+                "8",      // 5 + 3
+                "6",      // 10 - 4
+                "12",     // 6 * 2
+                "6",      // 3 * 2
+                ["1", "3", "5", "7", "9", "11", "13", "15", "17", "19", "21", "23", "25", "27", "29", "31", "33", "35", "37", "39", "41", "43", "45", "47", "49", "51", "53", "55", "57", "59", "61", "63", "65", "67", "69", "71", "73", "75", "77", "79", "81", "83", "85", "87", "89", "91", "93", "95", "97", "99"]
+            ];
+
+            for (let i = 1; i <= 5; i++) {
+                const resposta = document.getElementById(`resposta${i}`).value.toLowerCase().trim();
+                const feedbackElement = document.getElementById(`feedback${i}`);
+
+                if (i < 5) { 
+                    const respostaCorreta = respostasCorretas[i - 1].toLowerCase();
+                    if (resposta === respostaCorreta) {
+                        feedbackElement.innerHTML = '✅'; 
+                    } else {
+                        feedbackElement.innerHTML = '❌'; 
+                    }
+                } else { 
+                    const respostasValidas = respostasCorretas[i - 1];
+                    if (respostasValidas.includes(resposta)) {
+                        feedbackElement.innerHTML = '✅';
+                    } else {
+                        feedbackElement.innerHTML = '❌';
+                    }
+                }
+            }
+        }
+
+        function voltar() {
+            window.history.back(); 
+        }
+
+        function avancar() {
+            alert("Avançar para a próxima página!"); 
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const inputs = document.querySelectorAll("input[type='text']");
+            inputs.forEach((input, index) => {
+                input.addEventListener("keydown", (event) => {
+                    if (event.key === "Enter") {
+                        event.preventDefault();
+                        if (index < inputs.length - 1) {
+                            inputs[index + 1].focus(); 
+                        } else {
+                            verificar();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

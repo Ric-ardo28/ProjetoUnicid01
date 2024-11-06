@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/ensinomedio.css"> 
+    <title>Exercício de Artes - 3º Ano do Ensino Médio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .pergunta {
+            margin: 30px 0;
+            text-align: left;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .feedback {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .centralizado {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#"><img src="/image/logo_educai.png" alt="Logo Educaí" class="logo me-2"></a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="btn-custom" href="/cursos.html">Home</a>
+    </nav>
+    <h1>Exercício de Artes - 3º Ano do Ensino Médio</h1>
+    <p>Selecione a alternativa correta:</p>
+
+    <div class="pergunta">
+        <p>1. Qual movimento artístico é conhecido por sua ênfase na luz e na cor, e frequentemente retrata cenas da vida cotidiana? 
+            <span class="feedback" id="feedback1"></span>
+        </p>
+        <label><input type="radio" name="pergunta1" value="a"> A) Expressionismo</label><br>
+        <label><input type="radio" name="pergunta1" value="b"> B) Impressionismo</label><br>
+        <label><input type="radio" name="pergunta1" value="c"> C) Surrealismo</label><br>
+        <label><input type="radio" name="pergunta1" value="d"> D) Cubismo</label>
+    </div>
+
+    <div class="pergunta">
+        <p>2. Qual artista é mais associado ao movimento do Cubismo? 
+            <span class="feedback" id="feedback2"></span>
+        </p>
+        <label><input type="radio" name="pergunta2" value="a"> A) Vincent van Gogh</label><br>
+        <label><input type="radio" name="pergunta2" value="b"> B) Pablo Picasso</label><br>
+        <label><input type="radio" name="pergunta2" value="c"> C) Claude Monet</label><br>
+        <label><input type="radio" name="pergunta2" value="d"> D) Salvador Dalí</label>
+    </div>
+
+    <div class="pergunta">
+        <p>3. O que caracteriza a Arte Abstrata? 
+            <span class="feedback" id="feedback3"></span>
+        </p>
+        <label><input type="radio" name="pergunta3" value="a"> A) Uso de formas figurativas e realistas</label><br>
+        <label><input type="radio" name="pergunta3" value="b"> B) Ênfase em cores, formas e texturas não representativas</label><br>
+        <label><input type="radio" name="pergunta3" value="c"> C) Temas de natureza e paisagens</label><br>
+        <label><input type="radio" name="pergunta3" value="d"> D) Retratos de figuras humanas</label>
+    </div>
+
+    <div class="pergunta">
+        <p>4. Qual é uma das principais características do Surrealismo? 
+            <span class="feedback" id="feedback4"></span>
+        </p>
+        <label><input type="radio" name="pergunta4" value="a"> A) Representação precisa da realidade</label><br>
+        <label><input type="radio" name="pergunta4" value="b"> B) Exploração do inconsciente e sonhos</label><br>
+        <label><input type="radio" name="pergunta4" value="c"> C) Foco em temas políticos</label><br>
+        <label><input type="radio" name="pergunta4" value="d"> D) Uso de cores neutras e formas geométricas</label>
+    </div>
+
+    <div class="pergunta">
+        <p>5. A obra "O Grito" é famosa por sua representação da angústia e foi criada por qual artista? 
+            <span class="feedback" id="feedback5"></span>
+        </p>
+        <label><input type="radio" name="pergunta5" value="a"> A) Edvard Munch</label><br>
+        <label><input type="radio" name="pergunta5" value="b"> B) Wassily Kandinsky</label><br>
+        <label><input type="radio" name="pergunta5" value="c"> C) Henri Matisse</label><br>
+        <label><input type="radio" name="pergunta5" value="d"> D) Marc Chagall</label>
+    </div>
+
+    <div class="buttons">
+        <div class="button-left">
+            <button onclick="voltar()">Voltar</button>
+        </div>
+        <div class="button-right">
+            <button onclick="avancar()">Avançar</button>
+        </div>
+    </div>
+
+    <div class="centralizado">
+        <button id="verificarBtn" onclick="verificar()">Verificar Respostas</button>
+    </div>
+
+    <script>
+        function verificar() {
+            const respostasCorretas = [
+                "b", // 1. Impressionismo
+                "b", // 2. Pablo Picasso
+                "b", // 3. Ênfase em cores, formas e texturas não representativas
+                "b", // 4. Exploração do inconsciente e sonhos
+                "a"  // 5. Edvard Munch
+            ];
+
+            for (let i = 1; i <= 5; i++) {
+                const respostaSelecionada = document.querySelector(`input[name="pergunta${i}"]:checked`);
+                const feedbackElement = document.getElementById(`feedback${i}`);
+                if (respostaSelecionada && respostaSelecionada.value === respostasCorretas[i - 1]) {
+                    feedbackElement.innerHTML = '✅';
+                } else {
+                    feedbackElement.innerHTML = '❌';
+                }
+            }
+        }
+
+        function voltar() {
+            window.history.back();
+        }
+
+        function avancar() {
+            alert("Avançar para a próxima página!");
+        }
+    </script>
+</body>
+</html>

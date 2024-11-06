@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/ensinomedio.css"> 
+    <title>Exercício de Biologia - 3º Ano do Ensino Médio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .pergunta {
+            margin: 30px 0;
+            text-align: left;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .feedback {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .centralizado {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container d-flex justify-content-between align-items-center mt-3 mb-5">
+        <div class="d-flex align-items-center">
+            <a href="#"><img src="/image/logo_educai.png" alt="Logo Educaí" class="logo me-2"></a>
+            <span class="h4 mb-0 fw-bold">Educaí</span>
+        </div>
+        <a class="btn-custom" href="/cursos.html">Home</a>
+    </nav>
+    <h1>Exercício de Biologia - 3º Ano do Ensino Médio</h1>
+    <p>Escolha a alternativa correta:</p>
+
+    <div class="pergunta">
+        <p>1. O que é a fotossíntese?</p>
+        <input type="radio" id="b1a1" name="b1" value="A">
+        <label for="b1a1">A) A conversão de luz em energia química</label><br>
+        <input type="radio" id="b1a2" name="b1" value="B">
+        <label for="b1a2">B) A respiração celular</label><br>
+        <input type="radio" id="b1a3" name="b1" value="C">
+        <label for="b1a3">C) A reprodução de organismos</label><br>
+        <span class="feedback" id="feedback1"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>2. Qual é a unidade básica da vida?</p>
+        <input type="radio" id="b2a1" name="b2" value="A">
+        <label for="b2a1">A) O tecido</label><br>
+        <input type="radio" id="b2a2" name="b2" value="B">
+        <label for="b2a2">B) A célula</label><br>
+        <input type="radio" id="b2a3" name="b2" value="C">
+        <label for="b2a3">C) O órgão</label><br>
+        <span class="feedback" id="feedback2"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>3. O que são enzimas?</p>
+        <input type="radio" id="b3a1" name="b3" value="A">
+        <label for="b3a1">A) Catalisadores biológicos que aceleram reações químicas</label><br>
+        <input type="radio" id="b3a2" name="b3" value="B">
+        <label for="b3a2">B) Hormônios que regulam o metabolismo</label><br>
+        <input type="radio" id="b3a3" name="b3" value="C">
+        <label for="b3a3">C) Estruturas que armazenam energia</label><br>
+        <span class="feedback" id="feedback3"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>4. O que é genética?</p>
+        <input type="radio" id="b4a1" name="b4" value="A">
+        <label for="b4a1">A) O estudo das interações entre espécies</label><br>
+        <input type="radio" id="b4a2" name="b4" value="B">
+        <label for="b4a2">B) O estudo da hereditariedade e variação dos organismos</label><br>
+        <input type="radio" id="b4a3" name="b4" value="C">
+        <label for="b4a3">C) O estudo da evolução das espécies</label><br>
+        <span class="feedback" id="feedback4"></span>
+    </div>
+
+    <div class="pergunta">
+        <p>5. O que é o ciclo da água?</p>
+        <input type="radio" id="b5a1" name="b5" value="A">
+        <label for="b5a1">A) O movimento das placas tectônicas</label><br>
+        <input type="radio" id="b5a2" name="b5" value="B">
+        <label for="b5a2">B) O processo de evaporação, condensação e precipitação</label><br>
+        <input type="radio" id="b5a3" name="b5" value="C">
+        <label for="b5a3">C) O ciclo de vida das plantas</label><br>
+        <span class="feedback" id="feedback5"></span>
+    </div>
+
+    <div class="buttons">
+        <div class="button-left">
+            <button onclick="voltar()">Voltar</button>
+        </div>
+        <div class="button-right">
+            <button onclick="avancar()">Avançar</button>
+        </div>
+    </div>
+
+    <div class="centralizado">
+        <button id="verificarBtn" onclick="verificar()">Verificar Respostas</button>
+    </div>
+
+    <script>
+        function verificar() {
+            const respostasCorretas = ['A', 'B', 'A', 'B', 'B'];
+
+            for (let i = 1; i <= 5; i++) {
+                const respostaSelecionada = document.querySelector(`input[name="b${i}"]:checked`);
+                const feedbackElement = document.getElementById(`feedback${i}`);
+                if (respostaSelecionada && respostaSelecionada.value === respostasCorretas[i - 1]) {
+                    feedbackElement.innerHTML = '✅';
+                } else {
+                    feedbackElement.innerHTML = '❌';
+                }
+            }
+        }
+
+        function voltar() {
+            window.history.back();
+        }
+
+        function avancar() {
+            alert("Avançar para a próxima página!");
+        }
+    </script>
+</body>
+</html>
